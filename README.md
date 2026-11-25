@@ -1,6 +1,12 @@
 # hubspot-crm-migration-toolkit
 
+[![CI](https://github.com/mustafaautomation/hubspot-crm-migration-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/mustafaautomation/hubspot-crm-migration-toolkit/actions/workflows/ci.yml)
+
 **Portfolio demo, not client work.**
+
+Live demo: https://crm.quvantic.com
+
+![Northline migration console showing the recorded Northline East apply](docs/console.png)
 
 A TypeScript CLI and library that migrates legacy CRM CSV exports into a HubSpot developer sandbox. The sample books belong to Northline, a fictional revenue-intelligence vendor consolidating three regional systems:
 
@@ -180,15 +186,27 @@ The second apply of the same file creates 0 companies, 0 contacts, and 0 deals (
 
 ## Dashboard
 
-A read-only Next.js console shows the mapping, validation errors, dry-run diff, and reconciliation for each recorded book.
+A read-only Next.js console shows the mapping, validation errors, dry-run diff, and reconciliation for each recorded book. The deployed page is built from the committed bundles in `web/data/bundles` (Salesforce, Pipedrive, and Zoho). It does not call HubSpot and does not read `HUBSPOT_TOKEN`.
 
 ```bash
 npm run dashboard
 ```
 
-Open [the migration console](http://127.0.0.1:43123). It does not call HubSpot. The page is static data from `web/data/bundles`, plus any live JSON you drop in `web/data/reports/`.
+Open [the migration console](http://127.0.0.1:43123). JSON dropped in `web/data/reports/` is shown only when you run the app locally. Those files are gitignored, so they are not part of the Vercel deployment.
 
-It is a normal Next.js app and can be deployed later on a free host (Vercel or Cloudflare) at a name such as `crm.quvantic.com`. No HubSpot token belongs in that deployment.
+### Vercel
+
+Create one project from this GitHub repository. `web/vercel.json` sets the framework, install command, and build command. In the project settings, use:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js |
+| Root Directory | `web` |
+| Install Command | `npm ci` |
+| Build Command | `npm run build` (`next build --turbopack`) |
+| Output Directory | Default. Leave the override off. Next.js publishes `.next`. |
+
+No environment variables. The Hobby (free) tier is enough. After the first successful deployment, attach `crm.quvantic.com`.
 
 ## Tests
 
@@ -199,7 +217,7 @@ npm test
 npm run build
 ```
 
-The suite covers transforms, stage mapping, validation, in-file and HubSpot dedupe, idempotent re-runs, associations (including orphans and collapsed duplicates), 429 retry, dry-run write counts, checkpoint resume, reconciliation totals, and the CLI. GitHub Actions runs lint, types, tests, the library build, and the dashboard typecheck.
+The suite covers transforms, stage mapping, validation, in-file and HubSpot dedupe, idempotent re-runs, associations (including orphans and collapsed duplicates), 429 retry, dry-run write counts, checkpoint resume, reconciliation totals, and the CLI. GitHub Actions runs lint, types, tests, the library build, and the dashboard build.
 
 Regenerate the synthetic CSVs with `npm run generate:samples` and the dashboard artifacts with `npm run demo:record`.
 

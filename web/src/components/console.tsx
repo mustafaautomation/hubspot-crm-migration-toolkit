@@ -42,8 +42,9 @@ export function Console({ bundles }: { bundles: BundleView[] }) {
           </p>
           <h1 className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl">Northline migration console</h1>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Three regional CRM books from a fictional revenue-intelligence vendor, mapped into one HubSpot account.
-            Synthetic companies only. Domains use the reserved .example TLD.
+            <span className="text-foreground">Portfolio demo, not client work.</span> Read-only view of three synthetic
+            regional CRM books mapped into one HubSpot account. Domains use the reserved .example TLD. This page does not
+            call HubSpot.
           </p>
         </div>
         <Badge variant="outline" className="h-auto px-2.5 py-1 font-mono text-[11px] tracking-wide uppercase">
@@ -61,6 +62,7 @@ export function Console({ bundles }: { bundles: BundleView[] }) {
                 setSourceId(item.id);
                 setPhaseId(item.phases.find((phaseItem) => phaseItem.id === "applied")?.id ?? item.phases[0]?.id ?? "");
               }}
+              aria-pressed={item.id === bundle.id}
               className={`rounded-md border px-3 py-1.5 text-sm ${item.id === bundle.id ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card hover:bg-muted"}`}
             >
               {item.title}
@@ -73,6 +75,7 @@ export function Console({ bundles }: { bundles: BundleView[] }) {
               key={item.id}
               type="button"
               onClick={() => setPhaseId(item.id)}
+              aria-pressed={item.id === phase.id}
               className={`rounded-md px-3 py-1.5 font-mono text-xs ${item.id === phase.id ? "bg-foreground text-background" : "bg-muted text-muted-foreground"}`}
             >
               {item.label}

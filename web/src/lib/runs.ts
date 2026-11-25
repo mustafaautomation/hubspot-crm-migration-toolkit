@@ -1,5 +1,15 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import pipedriveBundle from "../../data/bundles/pipedrive.json";
+import salesforceBundle from "../../data/bundles/salesforce.json";
+import zohoBundle from "../../data/bundles/zoho.json";
+
+/** Recorded runs committed with the repo. The Vercel build reads these, not a live HubSpot account. */
+const COMMITTED_BUNDLES = [
+  ["salesforce", salesforceBundle],
+  ["pipedrive", pipedriveBundle],
+  ["zoho", zohoBundle],
+] as const;
 
 export interface Totals {
   sourceRows: number;
@@ -106,11 +116,7 @@ export interface BundleView {
 const OBJECTS = ["companies", "contacts", "deals"] as const;
 
 export function loadBundles(): BundleView[] {
-  const bundled = ["salesforce", "pipedrive", "zoho"].flatMap((source) => {
-    const path = join(process.cwd(), "data", "bundles", `${source}.json`);
-    if (!existsSync(path)) return [];
-    return [toBundle(JSON.parse(readFileSync(path, "utf8")) as unknown, source)];
-  });
+  const bundled = COMMITTED_BUNDLES.map(([source, raw]) => toBundle(raw, source));
   const reportsDir = join(process.cwd(), "data", "reports");
   const extras = existsSync(reportsDir)
     ? readdirSync(reportsDir)

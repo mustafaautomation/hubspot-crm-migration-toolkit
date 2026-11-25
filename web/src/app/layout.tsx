@@ -14,10 +14,33 @@ const mono = IBM_Plex_Mono({
   variable: "--font-ibm-mono",
 });
 
+const title = "Northline migration console";
+const description =
+  "Portfolio demo, not client work. Read-only console for a synthetic Salesforce, Pipedrive, and Zoho migration into HubSpot. No HubSpot token and no live customer data.";
+
 export const metadata: Metadata = {
-  title: "Northline migration console",
-  description:
-    "Portfolio demo of the hubspot-crm-migration-toolkit. Read-only view of a synthetic Salesforce, Pipedrive, and Zoho migration. Not client work.",
+  metadataBase: new URL("https://crm.quvantic.com"),
+  title,
+  description,
+  applicationName: title,
+  authors: [{ name: "Mustafa", url: "https://github.com/mustafaautomation" }],
+  creator: "Mustafa",
+  keywords: ["HubSpot", "CRM migration", "portfolio demo", "Salesforce", "Pipedrive", "Zoho"],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title,
+    description,
+    url: "https://crm.quvantic.com",
+    siteName: title,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
