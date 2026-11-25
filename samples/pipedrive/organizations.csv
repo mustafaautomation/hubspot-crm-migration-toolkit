@@ -1,0 +1,19 @@
+Organization - ID,Organization - Name,Organization - Website,Organization - Industry,Organization - Phone,Organization - City,Organization - State,Organization - Country,Organization - Label,Organization - Employees,Organization - Owner
+8001,Halcyon Devices,https://www.halcyondevices.example,Manufacturing,(512) 555-0120,San Jose,CA,United States,Customer,275,Morgan Ellis
+8002,Driftglass Travel,https://driftglass.example/,Media,617.555.0121,San Diego,CA,United States,Prospect,60,Quinn Alvarez
+8003,Portico Payments,porticopayments.example,Financial Services,+1 312 555 0122,Phoenix,AZ,United States,Customer,340,Morgan Ellis
+8004,Meadow & Rye,https://www.meadowrye.example,Professional Services,2065550123,Madison,WI,United States,Partner,40,Quinn Alvarez
+8005,Aster Labs,https://asterlabs.example/,Healthcare,(415) 555-0124,San Diego,CA,United States,Prospect,210,Avery Chen
+8006,Foundry North,foundrynorth.example,Manufacturing,303.555.0125,Milwaukee,WI,United States,Customer,510,Morgan Ellis
+8007,Clearwater Civic,https://www.clearwatercivic.example,Education,+1 404 555 0126,Boise,ID,United States,Prospect,90,Jordan Hale
+8008,Silverthread Security,https://silverthread.example/,Software,6465550127,Arlington,VA,United States,Customer,180,Riley Okonkwo
+8009,Highrail Energy,highrailenergy.example,Manufacturing,(702) 555-0128,Houston,TX,United States,Prospect,760,Morgan Ellis
+8010,Coral & Co,https://www.coralandco.example,Media,919.555.0129,Miami,FL,United States,Partner,35,Quinn Alvarez
+8011,Pathway Clinics,https://pathwayclinics.example/,Healthcare,+1 512 555 0130,Phoenix,AZ,United States,Customer,290,Samir Patel
+8012,Kite & Cable,kitecable.example,Logistics,6175550131,Memphis,TN,United States,Prospect,450,Morgan Ellis
+8013,Fieldnote Agriculture,https://www.fieldnoteag.example,Manufacturing,(312) 555-0132,Des Moines,IA,United States,Customer,230,Jordan Hale
+8014,Brightmonth Learning,https://brightmonth.example/,Education,206.555.0133,Nashville,TN,United States,Prospect,140,Quinn Alvarez
+8015,Vantage Kiln,vantagekiln.example,Manufacturing,+1 415 555 0134,Pittsburgh,PA,United States,Partner,95,Morgan Ellis
+8016,Helio Metering,https://www.heliometering.example,Software,3035550135,Denver,CO,United States,Customer,155,Avery Chen
+8099,Halcyon Devices West,https://www.halcyondevices.example/partners,Manufacturing,(408) 555-0114,San Jose,CA,United States,Customer,275,Morgan Ellis
+8098,,blankorg.example,Software,4085550118,San Jose,CA,United States,Prospect,40,Quinn Alvarez

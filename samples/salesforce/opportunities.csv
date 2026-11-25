@@ -1,0 +1,43 @@
+Opportunity ID,Opportunity Name,Account ID,Primary Contact ID,Stage,Pipeline,Amount,Close Date,Type,Opportunity Owner
+006NS000000D001,Northwind Robotics - Platform,001NS000000A001,003NS000000C001,Closed Won,Sales,"$18,000",2026-01-01,New Business,Avery Chen
+006NS000000D002,Northwind Robotics - Renewal 2026,001NS000000A001,003NS000000C001,Identified,Renewals,19440.00,2/2/2026,Renewal,Samir Patel
+006NS000000D003,Cedar & Pine Studio - Platform,001NS000000A002,003NS000000C003,Qualified,Sales,24000,3-Mar-2026,New Business,Jordan Hale
+006NS000000D004,Cedar & Pine Studio - Renewal 2026,001NS000000A002,003NS000000C003,Quoted,Renewals,"$25,920",2026-04-04,Renewal,Jordan Hale
+006NS000000D005,Brightpath Logistics - Platform,001NS000000A003,003NS000000C004,Discovery,Sales,36000.00,5/5/2026,New Business,Riley Okonkwo
+006NS000000D006,Harborline Clinics - Platform,001NS000000A004,003NS000000C005,Proposal,Sales,42000,6-Jun-2026,New Business,Avery Chen
+006NS000000D007,Harborline Clinics - Renewal 2026,001NS000000A004,003NS000000C005,Renewed,Renewals,"$45,360",2026-07-07,Renewal,Avery Chen
+006NS000000D008,Quay Street Capital - Platform,001NS000000A005,003NS000000C007,Negotiation,Sales,48000.00,8/8/2026,New Business,Jordan Hale
+006NS000000D009,Lumen Field Analytics - Platform,001NS000000A006,003NS000000C008,Closed Won,Sales,64000,9-Sep-2026,New Business,Riley Okonkwo
+006NS000000D010,Lumen Field Analytics - Renewal 2026,001NS000000A006,003NS000000C008,Identified,Renewals,"$69,120",2026-10-10,Renewal,Riley Okonkwo
+006NS000000D011,Copperline Manufacturing - Platform,001NS000000A007,003NS000000C009,Closed Lost,Sales,72000.00,11/11/2026,New Business,Avery Chen
+006NS000000D012,Kindred Learning - Platform,001NS000000A008,003NS000000C011,New Lead,Sales,96000,12-Dec-2026,New Business,Samir Patel
+006NS000000D013,Kindred Learning - Renewal 2026,001NS000000A008,003NS000000C011,Negotiation,Renewals,"$103,680",2026-01-13,Renewal,Samir Patel
+006NS000000D014,Sable Route Freight - Platform,001NS000000A009,003NS000000C012,Qualified,Sales,120000.00,2/14/2026,New Business,Riley Okonkwo
+006NS000000D015,Marlowe Legal Ops - Platform,001NS000000A010,003NS000000C013,Discovery,Sales,144000,15-Mar-2026,New Business,Jordan Hale
+006NS000000D016,Finch & Howe Advisors - Platform,001NS000000A011,003NS000000C015,Proposal,Sales,"$18,000",2026-04-16,New Business,Avery Chen
+006NS000000D017,Finch & Howe Advisors - Renewal 2026,001NS000000A011,003NS000000C015,Identified,Renewals,19440.00,5/17/2026,Renewal,Samir Patel
+006NS000000D018,Arclight Media - Platform,001NS000000A012,003NS000000C016,Negotiation,Sales,24000,18-Jun-2026,New Business,Jordan Hale
+006NS000000D019,Plover Health - Platform,001NS000000A013,003NS000000C017,Closed Won,Sales,"$36,000",2026-07-19,New Business,Samir Patel
+006NS000000D020,Plover Health - Renewal 2026,001NS000000A013,003NS000000C017,Negotiation,Renewals,38880.00,8/20/2026,Renewal,Samir Patel
+006NS000000D021,Redcedar Insurance - Platform,001NS000000A014,003NS000000C019,Closed Lost,Sales,42000,21-Sep-2026,New Business,Riley Okonkwo
+006NS000000D022,Paperplane HR - Platform,001NS000000A015,003NS000000C020,New Lead,Sales,"$48,000",2026-10-22,New Business,Avery Chen
+006NS000000D023,Paperplane HR - Renewal 2026,001NS000000A015,003NS000000C020,Churned,Renewals,51840.00,11/23/2026,Renewal,Samir Patel
+006NS000000D024,Southshore Clinics - Platform,001NS000000A016,003NS000000C021,Qualified,Sales,64000,24-Dec-2026,New Business,Jordan Hale
+006NS000000D025,Oakmont Schools - Platform,001NS000000A017,003NS000000C023,Discovery,Sales,"$72,000",2026-01-25,New Business,Samir Patel
+006NS000000D026,Oakmont Schools - Renewal 2026,001NS000000A017,003NS000000C023,Quoted,Renewals,77760.00,2/26/2026,Renewal,Samir Patel
+006NS000000D027,Blueharbor Mutual - Platform,001NS000000A018,003NS000000C024,Proposal,Sales,96000,27-Mar-2026,New Business,Riley Okonkwo
+006NS000000D028,Nimbus Retail Cloud - Platform,001NS000000A019,003NS000000C025,Negotiation,Sales,"$120,000",2026-04-01,New Business,Avery Chen
+006NS000000D029,Nimbus Retail Cloud - Renewal 2026,001NS000000A019,003NS000000C025,Renewed,Renewals,129600.00,5/2/2026,Renewal,Samir Patel
+006NS000000D030,Westferry Consulting - Platform,001NS000000A020,003NS000000C027,Closed Won,Sales,144000,3-Jun-2026,Partnership,Jordan Hale
+006NS000000D031,Larkspur Devices - Platform,001NS000000A021,003NS000000C028,Closed Lost,Sales,"$18,000",2026-07-04,New Business,Riley Okonkwo
+006NS000000D032,Larkspur Devices - Renewal 2026,001NS000000A021,003NS000000C028,Identified,Renewals,19440.00,8/5/2026,Renewal,Samir Patel
+006NS000000D033,Ironwood Components - Platform,001NS000000A022,003NS000000C029,New Lead,Sales,24000,6-Sep-2026,New Business,Avery Chen
+006NS000000D034,Summit Ledger - Platform,001NS000000A023,003NS000000C031,Qualified,Sales,"$36,000",2026-10-07,New Business,Jordan Hale
+006NS000000D035,Summit Ledger - Renewal 2026,001NS000000A023,003NS000000C031,Negotiation,Renewals,38880.00,11/8/2026,Renewal,Samir Patel
+006NS000000D036,Lantern Freight - Platform,001NS000000A024,003NS000000C032,Discovery,Sales,42000,9-Dec-2026,New Business,Riley Okonkwo
+006NS000000OORP,Missing Account - Platform,001NS000000AMISS,003NS000000C001,Proposal,Sales,42000,2026-06-30,New Business,Avery Chen
+006NS000000OBAD,Verbal Commit - Platform,001NS000000A001,003NS000000C001,Verbal Yes,Sales,"$18,000",2026-07-15,New Business,Avery Chen
+006NS000000D001,Northwind Robotics - duplicate opportunity row,001NS000000A001,003NS000000C001,Closed Won,Sales,96000,2026-04-01,New Business,Avery Chen
+006NS000000ODAT,Bad Close Date - Platform,001NS000000A005,003NS000000C007,Qualified,Sales,TBD,yesterday,New Business,Jordan Hale
+006NS000000DLOW,Case folded stage - Platform,001NS000000A006,003NS000000C008,closed won,sales,64000,15-Mar-2026,New Business,Riley Okonkwo
+006NS000000ODUP,Points at duplicate Northwind site,001NS000000ADUP,003NS000000C001,Negotiation,Sales,72000.00,4/2/2026,Expansion,Avery Chen

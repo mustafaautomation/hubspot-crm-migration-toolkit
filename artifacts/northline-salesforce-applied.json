@@ -1,0 +1,4714 @@
+{
+  "portfolioDemo": true,
+  "disclaimer": "Portfolio demo, not client work. Records are synthetic. Domains use the reserved .example TLD. No real personal data.",
+  "meta": {
+    "tool": "hubspot-crm-migration-toolkit",
+    "source": "salesforce",
+    "title": "Northline East",
+    "description": "US East and Central book exported from Salesforce for Northline, a fictional revenue-intelligence vendor. Includes the new-business Sales pipeline and a Renewals pipeline. Rows are synthetic and use the reserved .example domain.\n",
+    "mode": "live",
+    "target": "in-memory HubSpot API (same client as a developer sandbox)",
+    "startedAt": "2026-11-25T08:20:16.442Z",
+    "finishedAt": "2026-11-25T08:20:16.498Z",
+    "durationMs": 56,
+    "writes": 19,
+    "runId": "f0309168-cdcd-4d2a-b7c7-b56d6fb7c2e5",
+    "command": "hubspot-migrate run --config mappings/salesforce.yaml --input samples/salesforce --live"
+  },
+  "totals": {
+    "companies": {
+      "sourceRows": 28,
+      "valid": 26,
+      "invalid": 2,
+      "duplicates": 1,
+      "created": 25,
+      "updated": 0,
+      "skipped": 1,
+      "failed": 2
+    },
+    "contacts": {
+      "sourceRows": 37,
+      "valid": 34,
+      "invalid": 3,
+      "duplicates": 1,
+      "created": 33,
+      "updated": 0,
+      "skipped": 1,
+      "failed": 3
+    },
+    "deals": {
+      "sourceRows": 42,
+      "valid": 40,
+      "invalid": 2,
+      "duplicates": 1,
+      "created": 39,
+      "updated": 0,
+      "skipped": 1,
+      "failed": 2
+    }
+  },
+  "associations": {
+    "contactCompany": {
+      "planned": 33,
+      "created": 33,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dealCompany": {
+      "planned": 39,
+      "created": 38,
+      "skipped": 1,
+      "failed": 0
+    },
+    "dealContact": {
+      "planned": 39,
+      "created": 39,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "pipelines": [
+    {
+      "sourceName": "Sales",
+      "hubspotLabel": "Northline Sales",
+      "hubspotId": "1007",
+      "stages": [
+        {
+          "source": "New Lead",
+          "label": "New Lead",
+          "probability": "0.1",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1008"
+        },
+        {
+          "source": "Qualified",
+          "label": "Qualified",
+          "probability": "0.2",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1009"
+        },
+        {
+          "source": "Discovery",
+          "label": "Discovery",
+          "probability": "0.4",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1010"
+        },
+        {
+          "source": "Proposal",
+          "label": "Proposal",
+          "probability": "0.6",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1011"
+        },
+        {
+          "source": "Negotiation",
+          "label": "Negotiation",
+          "probability": "0.8",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1012"
+        },
+        {
+          "source": "Closed Won",
+          "label": "Closed Won",
+          "probability": "1.0",
+          "closedWon": true,
+          "closedLost": false,
+          "hubspotId": "1013"
+        },
+        {
+          "source": "Closed Lost",
+          "label": "Closed Lost",
+          "probability": "0.0",
+          "closedWon": false,
+          "closedLost": true,
+          "hubspotId": "1014"
+        }
+      ]
+    },
+    {
+      "sourceName": "Renewals",
+      "hubspotLabel": "Northline Renewals",
+      "hubspotId": "1015",
+      "stages": [
+        {
+          "source": "Identified",
+          "label": "Identified",
+          "probability": "0.2",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1016"
+        },
+        {
+          "source": "Quoted",
+          "label": "Quoted",
+          "probability": "0.5",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1017"
+        },
+        {
+          "source": "Negotiation",
+          "label": "Negotiation",
+          "probability": "0.8",
+          "closedWon": false,
+          "closedLost": false,
+          "hubspotId": "1018"
+        },
+        {
+          "source": "Renewed",
+          "label": "Renewed",
+          "probability": "1.0",
+          "closedWon": true,
+          "closedLost": false,
+          "hubspotId": "1019"
+        },
+        {
+          "source": "Churned",
+          "label": "Churned",
+          "probability": "0.0",
+          "closedWon": false,
+          "closedLost": true,
+          "hubspotId": "1020"
+        }
+      ]
+    }
+  ],
+  "validationErrors": [
+    {
+      "object": "companies",
+      "rowNumber": 27,
+      "sourceId": "001NS000000ABAD",
+      "field": "industry",
+      "message": "invalid value \"Astrology\""
+    },
+    {
+      "object": "companies",
+      "rowNumber": 28,
+      "sourceId": "001NS000000ANON",
+      "field": "name",
+      "message": "required value is missing"
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 34,
+      "sourceId": "003NS000000CBAD",
+      "field": "email",
+      "message": "invalid email \"not-an-email\""
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 35,
+      "sourceId": "003NS000000CNOL",
+      "field": "lastname",
+      "message": "required value is missing"
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 37,
+      "sourceId": "003NS000000CEMP",
+      "field": "firstname",
+      "message": "required value is missing"
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 37,
+      "sourceId": "003NS000000CEMP",
+      "field": "email",
+      "message": "required value is missing"
+    },
+    {
+      "object": "deals",
+      "rowNumber": 39,
+      "sourceId": "006NS000000OBAD",
+      "field": "dealstage",
+      "message": "unmapped stage \"Verbal Yes\" for pipeline \"Sales\""
+    },
+    {
+      "object": "deals",
+      "rowNumber": 41,
+      "sourceId": "006NS000000ODAT",
+      "field": "closedate",
+      "message": "invalid date \"yesterday\""
+    }
+  ],
+  "warnings": [
+    {
+      "object": "companies",
+      "rowNumber": 29,
+      "sourceId": "001NS000000ADOM",
+      "field": "domain",
+      "message": "invalid domain \"not a domain\""
+    },
+    {
+      "object": "companies",
+      "rowNumber": 29,
+      "sourceId": "001NS000000ADOM",
+      "field": "phone",
+      "message": "invalid phone \"call the office\""
+    },
+    {
+      "object": "companies",
+      "rowNumber": 29,
+      "sourceId": "001NS000000ADOM",
+      "field": "hubspot_owner_id",
+      "message": "no HubSpot owner matches \"Former Rep\""
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 37,
+      "sourceId": "003NS000000CEMP",
+      "field": "phone",
+      "message": "invalid phone \"555-0100\""
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 38,
+      "sourceId": "003NS000000CPHN",
+      "field": "phone",
+      "message": "invalid phone \"call the front desk\""
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 38,
+      "sourceId": "003NS000000CPHN",
+      "field": "hubspot_owner_id",
+      "message": "no HubSpot owner matches \"Former Rep\""
+    },
+    {
+      "object": "deals",
+      "rowNumber": 41,
+      "sourceId": "006NS000000ODAT",
+      "field": "amount",
+      "message": "invalid number \"TBD\""
+    }
+  ],
+  "actions": [
+    {
+      "object": "companies",
+      "rowNumber": 2,
+      "sourceId": "001NS000000A001",
+      "action": "create",
+      "label": "Northwind Robotics",
+      "properties": {
+        "name": "Northwind Robotics",
+        "domain": "northwindrobotics.example",
+        "industry": "MECHANICAL_OR_INDUSTRIAL_ENGINEERING",
+        "phone": "+15125550100",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "420",
+        "description": "Inspection robots for regional plants.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A001",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 3,
+      "sourceId": "001NS000000A002",
+      "action": "create",
+      "label": "Cedar & Pine Studio",
+      "properties": {
+        "name": "Cedar & Pine Studio",
+        "domain": "cedarandpine.example",
+        "industry": "ONLINE_MEDIA",
+        "phone": "+16175550101",
+        "city": "Portland",
+        "state": "OR",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "85",
+        "description": "Brand studio for outdoor retailers.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A002",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 4,
+      "sourceId": "001NS000000A003",
+      "action": "create",
+      "label": "Brightpath Logistics",
+      "properties": {
+        "name": "Brightpath Logistics",
+        "domain": "brightpathlogistics.example",
+        "industry": "LOGISTICS_AND_SUPPLY_CHAIN",
+        "phone": "+13125550102",
+        "city": "Chicago",
+        "state": "IL",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "610",
+        "description": "Regional LTL carrier covering the Midwest.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A003",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 5,
+      "sourceId": "001NS000000A004",
+      "action": "create",
+      "label": "Harborline Clinics",
+      "properties": {
+        "name": "Harborline Clinics",
+        "domain": "harborlineclinics.example",
+        "industry": "HOSPITAL_HEALTH_CARE",
+        "phone": "+12065550103",
+        "city": "Boston",
+        "state": "MA",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "240",
+        "description": "Outpatient specialty clinics.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A004",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 6,
+      "sourceId": "001NS000000A005",
+      "action": "create",
+      "label": "Quay Street Capital",
+      "properties": {
+        "name": "Quay Street Capital",
+        "domain": "quaystreet.example",
+        "industry": "FINANCIAL_SERVICES",
+        "phone": "+14155550104",
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "150",
+        "description": "Middle-market private credit.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A005",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 7,
+      "sourceId": "001NS000000A006",
+      "action": "create",
+      "label": "Lumen Field Analytics",
+      "properties": {
+        "name": "Lumen Field Analytics",
+        "domain": "lumenfield.example",
+        "industry": "COMPUTER_SOFTWARE",
+        "phone": "+13035550105",
+        "city": "Seattle",
+        "state": "WA",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "190",
+        "description": "Product analytics for B2B SaaS.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A006",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 8,
+      "sourceId": "001NS000000A007",
+      "action": "create",
+      "label": "Copperline Manufacturing",
+      "properties": {
+        "name": "Copperline Manufacturing",
+        "domain": "copperline.example",
+        "industry": "MECHANICAL_OR_INDUSTRIAL_ENGINEERING",
+        "phone": "+14045550106",
+        "city": "Detroit",
+        "state": "MI",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "880",
+        "description": "Precision metal components.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A007",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 9,
+      "sourceId": "001NS000000A008",
+      "action": "create",
+      "label": "Kindred Learning",
+      "properties": {
+        "name": "Kindred Learning",
+        "domain": "kindredlearning.example",
+        "industry": "E_LEARNING",
+        "phone": "+16465550107",
+        "city": "Minneapolis",
+        "state": "MN",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "310",
+        "description": "Corporate learning programs.",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "001NS000000A008",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 10,
+      "sourceId": "001NS000000A009",
+      "action": "create",
+      "label": "Sable Route Freight",
+      "properties": {
+        "name": "Sable Route Freight",
+        "domain": "sableroute.example",
+        "industry": "LOGISTICS_AND_SUPPLY_CHAIN",
+        "phone": "+17025550108",
+        "city": "Atlanta",
+        "state": "GA",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "540",
+        "description": "Dedicated fleet for grocery shippers.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A009",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 11,
+      "sourceId": "001NS000000A010",
+      "action": "create",
+      "label": "Marlowe Legal Ops",
+      "properties": {
+        "name": "Marlowe Legal Ops",
+        "domain": "marlowegal.example",
+        "industry": "MANAGEMENT_CONSULTING",
+        "phone": "+19195550109",
+        "city": "Washington",
+        "state": "DC",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "70",
+        "description": "Legal operations consultancy.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A010",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 12,
+      "sourceId": "001NS000000A011",
+      "action": "create",
+      "label": "Finch & Howe Advisors",
+      "properties": {
+        "name": "Finch & Howe Advisors",
+        "domain": "finchhowe.example",
+        "industry": "MANAGEMENT_CONSULTING",
+        "phone": "+15125550110",
+        "city": "Chicago",
+        "state": "IL",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "95",
+        "description": "CFO advisory for founder-led firms.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A011",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 13,
+      "sourceId": "001NS000000A012",
+      "action": "create",
+      "label": "Arclight Media",
+      "properties": {
+        "name": "Arclight Media",
+        "domain": "arclightmedia.example",
+        "industry": "ONLINE_MEDIA",
+        "phone": "+16175550111",
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "140",
+        "description": "B2B podcast network.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A012",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 14,
+      "sourceId": "001NS000000A013",
+      "action": "create",
+      "label": "Plover Health",
+      "properties": {
+        "name": "Plover Health",
+        "domain": "ploverhealth.example",
+        "industry": "HOSPITAL_HEALTH_CARE",
+        "phone": "+13125550112",
+        "city": "Raleigh",
+        "state": "NC",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "260",
+        "description": "Home infusion services.",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "001NS000000A013",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 15,
+      "sourceId": "001NS000000A014",
+      "action": "create",
+      "label": "Redcedar Insurance",
+      "properties": {
+        "name": "Redcedar Insurance",
+        "domain": "redcedar.example",
+        "industry": "INSURANCE",
+        "phone": "+12065550113",
+        "city": "Charlotte",
+        "state": "NC",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "430",
+        "description": "Commercial package carrier.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A014",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 16,
+      "sourceId": "001NS000000A015",
+      "action": "create",
+      "label": "Paperplane HR",
+      "properties": {
+        "name": "Paperplane HR",
+        "domain": "paperplanehr.example",
+        "industry": "COMPUTER_SOFTWARE",
+        "phone": "+14155550114",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "210",
+        "description": "HRIS for multi-state employers.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A015",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 17,
+      "sourceId": "001NS000000A016",
+      "action": "create",
+      "label": "Southshore Clinics",
+      "properties": {
+        "name": "Southshore Clinics",
+        "domain": "southshoreclinics.example",
+        "industry": "HOSPITAL_HEALTH_CARE",
+        "phone": "+13035550115",
+        "city": "Miami",
+        "state": "FL",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "180",
+        "description": "Orthopedic group.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A016",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 18,
+      "sourceId": "001NS000000A017",
+      "action": "create",
+      "label": "Oakmont Schools",
+      "properties": {
+        "name": "Oakmont Schools",
+        "domain": "oakmontschools.example",
+        "industry": "E_LEARNING",
+        "phone": "+14045550116",
+        "city": "Columbus",
+        "state": "OH",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "720",
+        "description": "Regional independent school network.",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "001NS000000A017",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 19,
+      "sourceId": "001NS000000A018",
+      "action": "create",
+      "label": "Blueharbor Mutual",
+      "properties": {
+        "name": "Blueharbor Mutual",
+        "domain": "blueharbor.example",
+        "industry": "INSURANCE",
+        "phone": "+16465550117",
+        "city": "Hartford",
+        "state": "CT",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "390",
+        "description": "Mutual insurer for trades.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A018",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 20,
+      "sourceId": "001NS000000A019",
+      "action": "create",
+      "label": "Nimbus Retail Cloud",
+      "properties": {
+        "name": "Nimbus Retail Cloud",
+        "domain": "nimbusretail.example",
+        "industry": "COMPUTER_SOFTWARE",
+        "phone": "+17025550118",
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "160",
+        "description": "Inventory planning for specialty retail.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A019",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 21,
+      "sourceId": "001NS000000A020",
+      "action": "create",
+      "label": "Westferry Consulting",
+      "properties": {
+        "name": "Westferry Consulting",
+        "domain": "westferry.example",
+        "industry": "MANAGEMENT_CONSULTING",
+        "phone": "+19195550119",
+        "city": "Boston",
+        "state": "MA",
+        "country": "United States",
+        "lifecyclestage": "opportunity",
+        "numberofemployees": "55",
+        "description": "Implementation partner for revenue tools.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A020",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 22,
+      "sourceId": "001NS000000A021",
+      "action": "create",
+      "label": "Larkspur Devices",
+      "properties": {
+        "name": "Larkspur Devices",
+        "domain": "larkspurdevices.example",
+        "industry": "HOSPITAL_HEALTH_CARE",
+        "phone": "+15125550120",
+        "city": "Cambridge",
+        "state": "MA",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "300",
+        "description": "Diagnostic device manufacturer.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A021",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 23,
+      "sourceId": "001NS000000A022",
+      "action": "create",
+      "label": "Ironwood Components",
+      "properties": {
+        "name": "Ironwood Components",
+        "domain": "ironwoodcomponents.example",
+        "industry": "MECHANICAL_OR_INDUSTRIAL_ENGINEERING",
+        "phone": "+16175550121",
+        "city": "Cleveland",
+        "state": "OH",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "640",
+        "description": "Industrial valve supplier.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000A022",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 24,
+      "sourceId": "001NS000000A023",
+      "action": "create",
+      "label": "Summit Ledger",
+      "properties": {
+        "name": "Summit Ledger",
+        "domain": "summitledger.example",
+        "industry": "FINANCIAL_SERVICES",
+        "phone": "+13125550122",
+        "city": "Denver",
+        "state": "CO",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "125",
+        "description": "Outsourced controllership.",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "001NS000000A023",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 25,
+      "sourceId": "001NS000000A024",
+      "action": "create",
+      "label": "Lantern Freight",
+      "properties": {
+        "name": "Lantern Freight",
+        "domain": "lanternfreight.example",
+        "industry": "LOGISTICS_AND_SUPPLY_CHAIN",
+        "phone": "+12065550123",
+        "city": "Kansas City",
+        "state": "MO",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "410",
+        "description": "Final-mile for medical devices.",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "001NS000000A024",
+        "legacy_source": "salesforce",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 26,
+      "sourceId": "001NS000000ADUP",
+      "action": "skip",
+      "reason": "duplicate domain in source; kept 001NS000000A001",
+      "label": "Northwind Robotics (stale import)",
+      "properties": {
+        "name": "Northwind Robotics (stale import)",
+        "domain": "northwindrobotics.example",
+        "industry": "MECHANICAL_OR_INDUSTRIAL_ENGINEERING",
+        "phone": "+15125550142",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "customer",
+        "numberofemployees": "420",
+        "description": "Duplicate website of the Austin robotics account.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000ADUP",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 27,
+      "sourceId": "001NS000000ABAD",
+      "action": "fail",
+      "reason": "invalid value \"Astrology\"",
+      "label": "Astrology Insights Desk",
+      "properties": {
+        "name": "Astrology Insights Desk",
+        "domain": "astrologyinsights.example",
+        "phone": "+15125550177",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "12",
+        "description": "Unmapped industry enum.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000ABAD",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 28,
+      "sourceId": "001NS000000ANON",
+      "action": "fail",
+      "reason": "required value is missing",
+      "label": "001NS000000ANON",
+      "properties": {
+        "domain": "missingname.example",
+        "industry": "COMPUTER_SOFTWARE",
+        "phone": "+15125550104",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "20",
+        "description": "Account name was blank in the export.",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "001NS000000ANON",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "companies",
+      "rowNumber": 29,
+      "sourceId": "001NS000000ADOM",
+      "action": "create",
+      "label": "Broken Website Co",
+      "properties": {
+        "name": "Broken Website Co",
+        "industry": "COMPUTER_SOFTWARE",
+        "city": "Austin",
+        "state": "TX",
+        "country": "United States",
+        "lifecyclestage": "lead",
+        "numberofemployees": "15",
+        "description": "Website and phone do not parse.",
+        "legacy_owner": "Former Rep",
+        "legacy_external_id": "001NS000000ADOM",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Former Rep"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 2,
+      "sourceId": "003NS000000C001",
+      "action": "create",
+      "label": "Amina Shah",
+      "properties": {
+        "firstname": "Amina",
+        "lastname": "Shah",
+        "email": "amina.shah@northwindrobotics.example",
+        "jobtitle": "VP Revenue Operations",
+        "phone": "+12065550103",
+        "mobilephone": "+16175550111",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C001",
+        "legacy_source": "salesforce",
+        "company": "Northwind Robotics",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 3,
+      "sourceId": "003NS000000C002",
+      "action": "create",
+      "label": "Jules Nazir",
+      "properties": {
+        "firstname": "Jules",
+        "lastname": "Nazir",
+        "email": "jules.nazir@northwindrobotics.example",
+        "jobtitle": "Head of RevOps",
+        "phone": "+12065550103",
+        "mobilephone": "+16175550111",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C002",
+        "legacy_source": "salesforce",
+        "company": "Northwind Robotics",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 4,
+      "sourceId": "003NS000000C003",
+      "action": "create",
+      "label": "Beatrice Cole",
+      "properties": {
+        "firstname": "Beatrice",
+        "lastname": "Cole",
+        "email": "beatrice.cole@cedarandpine.example",
+        "jobtitle": "Director of Sales",
+        "phone": "+14155550104",
+        "mobilephone": "+13125550112",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C003",
+        "legacy_source": "salesforce",
+        "company": "Cedar & Pine Studio",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 5,
+      "sourceId": "003NS000000C004",
+      "action": "create",
+      "label": "Chris Dalton",
+      "properties": {
+        "firstname": "Chris",
+        "lastname": "Dalton",
+        "email": "chris.dalton@brightpathlogistics.example",
+        "jobtitle": "Head of RevOps",
+        "phone": "+13035550105",
+        "mobilephone": "+12065550113",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "salesqualifiedlead",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C004",
+        "legacy_source": "salesforce",
+        "company": "Brightpath Logistics",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 6,
+      "sourceId": "003NS000000C005",
+      "action": "create",
+      "label": "Diane Okada",
+      "properties": {
+        "firstname": "Diane",
+        "lastname": "Okada",
+        "email": "diane.okada@harborlineclinics.example",
+        "jobtitle": "CRO",
+        "phone": "+14045550106",
+        "mobilephone": "+14155550114",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C005",
+        "legacy_source": "salesforce",
+        "company": "Harborline Clinics",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 7,
+      "sourceId": "003NS000000C006",
+      "action": "create",
+      "label": "Maya Moreau",
+      "properties": {
+        "firstname": "Maya",
+        "lastname": "Moreau",
+        "email": "maya.moreau@harborlineclinics.example",
+        "jobtitle": "VP Sales",
+        "phone": "+14045550106",
+        "mobilephone": "+14155550114",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C006",
+        "legacy_source": "salesforce",
+        "company": "Harborline Clinics",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 8,
+      "sourceId": "003NS000000C007",
+      "action": "create",
+      "label": "Evan Brooks",
+      "properties": {
+        "firstname": "Evan",
+        "lastname": "Brooks",
+        "email": "evan.brooks@quaystreet.example",
+        "jobtitle": "Sales Operations Manager",
+        "phone": "+16465550107",
+        "mobilephone": "+13035550115",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "salesqualifiedlead",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C007",
+        "legacy_source": "salesforce",
+        "company": "Quay Street Capital",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 9,
+      "sourceId": "003NS000000C008",
+      "action": "create",
+      "label": "Farah Nazir",
+      "properties": {
+        "firstname": "Farah",
+        "lastname": "Nazir",
+        "email": "farah.nazir@lumenfield.example",
+        "jobtitle": "VP Sales",
+        "phone": "+17025550108",
+        "mobilephone": "+14045550116",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C008",
+        "legacy_source": "salesforce",
+        "company": "Lumen Field Analytics",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 10,
+      "sourceId": "003NS000000C009",
+      "action": "create",
+      "label": "Gabriel Soto",
+      "properties": {
+        "firstname": "Gabriel",
+        "lastname": "Soto",
+        "email": "gabriel.soto@copperline.example",
+        "jobtitle": "Director of Marketing Operations",
+        "phone": "+19195550109",
+        "mobilephone": "+16465550117",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "salesqualifiedlead",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C009",
+        "legacy_source": "salesforce",
+        "company": "Copperline Manufacturing",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 11,
+      "sourceId": "003NS000000C010",
+      "action": "create",
+      "label": "Quentin Berg",
+      "properties": {
+        "firstname": "Quentin",
+        "lastname": "Berg",
+        "email": "quentin.berg@copperline.example",
+        "jobtitle": "VP Revenue Operations",
+        "phone": "+19195550109",
+        "mobilephone": "+16465550117",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C010",
+        "legacy_source": "salesforce",
+        "company": "Copperline Manufacturing",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 12,
+      "sourceId": "003NS000000C011",
+      "action": "create",
+      "label": "Helen Park",
+      "properties": {
+        "firstname": "Helen",
+        "lastname": "Park",
+        "email": "helen.park@kindredlearning.example",
+        "jobtitle": "RevOps Lead",
+        "phone": "+15125550110",
+        "mobilephone": "+17025550118",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "003NS000000C011",
+        "legacy_source": "salesforce",
+        "company": "Kindred Learning",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 13,
+      "sourceId": "003NS000000C012",
+      "action": "create",
+      "label": "Ivan Moreau",
+      "properties": {
+        "firstname": "Ivan",
+        "lastname": "Moreau",
+        "email": "ivan.moreau@sableroute.example",
+        "jobtitle": "VP Revenue Operations",
+        "phone": "+16175550111",
+        "mobilephone": "+19195550119",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "salesqualifiedlead",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C012",
+        "legacy_source": "salesforce",
+        "company": "Sable Route Freight",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 14,
+      "sourceId": "003NS000000C013",
+      "action": "create",
+      "label": "Jules Carter",
+      "properties": {
+        "firstname": "Jules",
+        "lastname": "Carter",
+        "email": "jules.carter@marlowegal.example",
+        "jobtitle": "Director of Sales",
+        "phone": "+13125550112",
+        "mobilephone": "+15125550120",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C013",
+        "legacy_source": "salesforce",
+        "company": "Marlowe Legal Ops",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 15,
+      "sourceId": "003NS000000C014",
+      "action": "create",
+      "label": "Tessa Raman",
+      "properties": {
+        "firstname": "Tessa",
+        "lastname": "Raman",
+        "email": "tessa.raman@marlowegal.example",
+        "jobtitle": "CRO",
+        "phone": "+13125550112",
+        "mobilephone": "+15125550120",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C014",
+        "legacy_source": "salesforce",
+        "company": "Marlowe Legal Ops",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 16,
+      "sourceId": "003NS000000C015",
+      "action": "create",
+      "label": "Keiko Mori",
+      "properties": {
+        "firstname": "Keiko",
+        "lastname": "Mori",
+        "email": "keiko.mori@finchhowe.example",
+        "jobtitle": "Head of RevOps",
+        "phone": "+12065550113",
+        "mobilephone": "+16175550121",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C015",
+        "legacy_source": "salesforce",
+        "company": "Finch & Howe Advisors",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 17,
+      "sourceId": "003NS000000C016",
+      "action": "create",
+      "label": "Leo Berg",
+      "properties": {
+        "firstname": "Leo",
+        "lastname": "Berg",
+        "email": "leo.berg@arclightmedia.example",
+        "jobtitle": "CRO",
+        "phone": "+14155550114",
+        "mobilephone": "+13125550122",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C016",
+        "legacy_source": "salesforce",
+        "company": "Arclight Media",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 18,
+      "sourceId": "003NS000000C017",
+      "action": "create",
+      "label": "Maya Srinivasan",
+      "properties": {
+        "firstname": "Maya",
+        "lastname": "Srinivasan",
+        "email": "maya.srinivasan@ploverhealth.example",
+        "jobtitle": "Sales Operations Manager",
+        "phone": "+13035550115",
+        "mobilephone": "+12065550123",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "003NS000000C017",
+        "legacy_source": "salesforce",
+        "company": "Plover Health",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 19,
+      "sourceId": "003NS000000C018",
+      "action": "create",
+      "label": "Willa Grant",
+      "properties": {
+        "firstname": "Willa",
+        "lastname": "Grant",
+        "email": "willa.grant@ploverhealth.example",
+        "jobtitle": "Director of Marketing Operations",
+        "phone": "+13035550115",
+        "mobilephone": "+12065550123",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "003NS000000C018",
+        "legacy_source": "salesforce",
+        "company": "Plover Health",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 20,
+      "sourceId": "003NS000000C019",
+      "action": "create",
+      "label": "Noah Keller",
+      "properties": {
+        "firstname": "Noah",
+        "lastname": "Keller",
+        "email": "noah.keller@redcedar.example",
+        "jobtitle": "VP Sales",
+        "phone": "+14045550116",
+        "mobilephone": "+14155550124",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C019",
+        "legacy_source": "salesforce",
+        "company": "Redcedar Insurance",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 21,
+      "sourceId": "003NS000000C020",
+      "action": "create",
+      "label": "Priya Raman",
+      "properties": {
+        "firstname": "Priya",
+        "lastname": "Raman",
+        "email": "priya.raman@paperplanehr.example",
+        "jobtitle": "Director of Marketing Operations",
+        "phone": "+16465550117",
+        "mobilephone": "+13035550125",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C020",
+        "legacy_source": "salesforce",
+        "company": "Paperplane HR",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 22,
+      "sourceId": "003NS000000C021",
+      "action": "create",
+      "label": "Quentin Walsh",
+      "properties": {
+        "firstname": "Quentin",
+        "lastname": "Walsh",
+        "email": "quentin.walsh@southshoreclinics.example",
+        "jobtitle": "RevOps Lead",
+        "phone": "+17025550118",
+        "mobilephone": "+14045550126",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C021",
+        "legacy_source": "salesforce",
+        "company": "Southshore Clinics",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 23,
+      "sourceId": "003NS000000C022",
+      "action": "create",
+      "label": "Andre Lang",
+      "properties": {
+        "firstname": "Andre",
+        "lastname": "Lang",
+        "email": "andre.lang@southshoreclinics.example",
+        "jobtitle": "Director of Sales",
+        "phone": "+17025550118",
+        "mobilephone": "+14045550126",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C022",
+        "legacy_source": "salesforce",
+        "company": "Southshore Clinics",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 24,
+      "sourceId": "003NS000000C023",
+      "action": "create",
+      "label": "Rosa Delgado",
+      "properties": {
+        "firstname": "Rosa",
+        "lastname": "Delgado",
+        "email": "rosa.delgado@oakmontschools.example",
+        "jobtitle": "VP Revenue Operations",
+        "phone": "+19195550119",
+        "mobilephone": "+16465550127",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "003NS000000C023",
+        "legacy_source": "salesforce",
+        "company": "Oakmont Schools",
+        "hubspot_owner_id": "1004"
+      },
+      "labels": {
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 25,
+      "sourceId": "003NS000000C024",
+      "action": "create",
+      "label": "Silas Grant",
+      "properties": {
+        "firstname": "Silas",
+        "lastname": "Grant",
+        "email": "silas.grant@blueharbor.example",
+        "jobtitle": "Director of Sales",
+        "phone": "+15125550120",
+        "mobilephone": "+17025550128",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C024",
+        "legacy_source": "salesforce",
+        "company": "Blueharbor Mutual",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 26,
+      "sourceId": "003NS000000C025",
+      "action": "create",
+      "label": "Tessa Nguyen",
+      "properties": {
+        "firstname": "Tessa",
+        "lastname": "Nguyen",
+        "email": "tessa.nguyen@nimbusretail.example",
+        "jobtitle": "Head of RevOps",
+        "phone": "+16175550121",
+        "mobilephone": "+19195550129",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C025",
+        "legacy_source": "salesforce",
+        "company": "Nimbus Retail Cloud",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 27,
+      "sourceId": "003NS000000C026",
+      "action": "create",
+      "label": "Derek Mercer",
+      "properties": {
+        "firstname": "Derek",
+        "lastname": "Mercer",
+        "email": "derek.mercer@nimbusretail.example",
+        "jobtitle": "Sales Operations Manager",
+        "phone": "+16175550121",
+        "mobilephone": "+19195550129",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C026",
+        "legacy_source": "salesforce",
+        "company": "Nimbus Retail Cloud",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 28,
+      "sourceId": "003NS000000C027",
+      "action": "create",
+      "label": "Uma Kapoor",
+      "properties": {
+        "firstname": "Uma",
+        "lastname": "Kapoor",
+        "email": "uma.kapoor@westferry.example",
+        "jobtitle": "CRO",
+        "phone": "+13125550122",
+        "mobilephone": "+15125550130",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C027",
+        "legacy_source": "salesforce",
+        "company": "Westferry Consulting",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 29,
+      "sourceId": "003NS000000C028",
+      "action": "create",
+      "label": "Victor Lang",
+      "properties": {
+        "firstname": "Victor",
+        "lastname": "Lang",
+        "email": "victor.lang@larkspurdevices.example",
+        "jobtitle": "Sales Operations Manager",
+        "phone": "+12065550123",
+        "mobilephone": "+16175550131",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C028",
+        "legacy_source": "salesforce",
+        "company": "Larkspur Devices",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 30,
+      "sourceId": "003NS000000C029",
+      "action": "create",
+      "label": "Willa Hart",
+      "properties": {
+        "firstname": "Willa",
+        "lastname": "Hart",
+        "email": "willa.hart@ironwoodcomponents.example",
+        "jobtitle": "VP Sales",
+        "phone": "+14155550124",
+        "mobilephone": "+13125550132",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C029",
+        "legacy_source": "salesforce",
+        "company": "Ironwood Components",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 31,
+      "sourceId": "003NS000000C030",
+      "action": "create",
+      "label": "Chris Holm",
+      "properties": {
+        "firstname": "Chris",
+        "lastname": "Holm",
+        "email": "chris.holm@ironwoodcomponents.example",
+        "jobtitle": "RevOps Lead",
+        "phone": "+14155550124",
+        "mobilephone": "+13125550132",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000C030",
+        "legacy_source": "salesforce",
+        "company": "Ironwood Components",
+        "hubspot_owner_id": "1001"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 32,
+      "sourceId": "003NS000000C031",
+      "action": "create",
+      "label": "Yasmin Darwish",
+      "properties": {
+        "firstname": "Yasmin",
+        "lastname": "Darwish",
+        "email": "yasmin.darwish@summitledger.example",
+        "jobtitle": "Director of Marketing Operations",
+        "phone": "+13035550125",
+        "mobilephone": "+12065550133",
+        "legacy_lead_source": "Partner",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000C031",
+        "legacy_source": "salesforce",
+        "company": "Summit Ledger",
+        "hubspot_owner_id": "1002"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 33,
+      "sourceId": "003NS000000C032",
+      "action": "create",
+      "label": "Zoe Mercer",
+      "properties": {
+        "firstname": "Zoe",
+        "lastname": "Mercer",
+        "email": "zoe.mercer@lanternfreight.example",
+        "jobtitle": "RevOps Lead",
+        "phone": "+14045550126",
+        "mobilephone": "+14155550134",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "opportunity",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "003NS000000C032",
+        "legacy_source": "salesforce",
+        "company": "Lantern Freight",
+        "hubspot_owner_id": "1003"
+      },
+      "labels": {
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 34,
+      "sourceId": "003NS000000CBAD",
+      "action": "fail",
+      "reason": "invalid email \"not-an-email\"",
+      "label": "Pat Notreal",
+      "properties": {
+        "firstname": "Pat",
+        "lastname": "Notreal",
+        "jobtitle": "Intern",
+        "phone": "+15125550101",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "lead",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000CBAD",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 35,
+      "sourceId": "003NS000000CNOL",
+      "action": "fail",
+      "reason": "required value is missing",
+      "label": "Sam",
+      "properties": {
+        "firstname": "Sam",
+        "email": "sam.noname@northwindrobotics.example",
+        "jobtitle": "Analyst",
+        "phone": "+15125550108",
+        "legacy_lead_source": "Outbound",
+        "lifecyclestage": "salesqualifiedlead",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000CNOL",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 36,
+      "sourceId": "003NS000000CDUP",
+      "action": "skip",
+      "reason": "duplicate email in source; kept 003NS000000C001",
+      "label": "Amina Shah",
+      "properties": {
+        "firstname": "Amina",
+        "lastname": "Shah",
+        "email": "amina.shah@northwindrobotics.example",
+        "jobtitle": "VP Revenue Operations",
+        "phone": "+15125550100",
+        "legacy_lead_source": "Inbound",
+        "lifecyclestage": "customer",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "003NS000000CDUP",
+        "legacy_source": "salesforce",
+        "company": "Northwind Robotics"
+      },
+      "labels": {
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 37,
+      "sourceId": "003NS000000CEMP",
+      "action": "fail",
+      "reason": "required value is missing; required value is missing",
+      "label": "Cho",
+      "properties": {
+        "lastname": "Cho",
+        "jobtitle": "Contractor",
+        "legacy_lead_source": "Event",
+        "lifecyclestage": "lead",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "003NS000000CEMP",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "contacts",
+      "rowNumber": 38,
+      "sourceId": "003NS000000CPHN",
+      "action": "create",
+      "label": "Riley Guest",
+      "properties": {
+        "firstname": "Riley",
+        "lastname": "Guest",
+        "email": "riley.guest@brightpathlogistics.example",
+        "jobtitle": "Coordinator",
+        "legacy_lead_source": "Website",
+        "lifecyclestage": "lead",
+        "legacy_owner": "Former Rep",
+        "legacy_external_id": "003NS000000CPHN",
+        "legacy_source": "salesforce",
+        "company": "Brightpath Logistics"
+      },
+      "labels": {
+        "owner": "Former Rep"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 2,
+      "sourceId": "006NS000000D001",
+      "action": "create",
+      "label": "Northwind Robotics - Platform",
+      "properties": {
+        "dealname": "Northwind Robotics - Platform",
+        "amount": "18000",
+        "closedate": "1767225600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D001",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1013"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 3,
+      "sourceId": "006NS000000D002",
+      "action": "create",
+      "label": "Northwind Robotics - Renewal 2026",
+      "properties": {
+        "dealname": "Northwind Robotics - Renewal 2026",
+        "amount": "19440",
+        "closedate": "1769990400000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D002",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Identified",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1016"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Identified",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Identified",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 4,
+      "sourceId": "006NS000000D003",
+      "action": "create",
+      "label": "Cedar & Pine Studio - Platform",
+      "properties": {
+        "dealname": "Cedar & Pine Studio - Platform",
+        "amount": "24000",
+        "closedate": "1772496000000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D003",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Qualified",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1009"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Qualified",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Qualified",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 5,
+      "sourceId": "006NS000000D004",
+      "action": "create",
+      "label": "Cedar & Pine Studio - Renewal 2026",
+      "properties": {
+        "dealname": "Cedar & Pine Studio - Renewal 2026",
+        "amount": "25920",
+        "closedate": "1775260800000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D004",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Quoted",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1015",
+        "dealstageId": "1017"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Quoted",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Quoted",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 6,
+      "sourceId": "006NS000000D005",
+      "action": "create",
+      "label": "Brightpath Logistics - Platform",
+      "properties": {
+        "dealname": "Brightpath Logistics - Platform",
+        "amount": "36000",
+        "closedate": "1777939200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D005",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Discovery",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1010"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Discovery",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Discovery",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 7,
+      "sourceId": "006NS000000D006",
+      "action": "create",
+      "label": "Harborline Clinics - Platform",
+      "properties": {
+        "dealname": "Harborline Clinics - Platform",
+        "amount": "42000",
+        "closedate": "1780704000000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D006",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Proposal",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1011"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Proposal",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Proposal",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 8,
+      "sourceId": "006NS000000D007",
+      "action": "create",
+      "label": "Harborline Clinics - Renewal 2026",
+      "properties": {
+        "dealname": "Harborline Clinics - Renewal 2026",
+        "amount": "45360",
+        "closedate": "1783382400000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D007",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Renewed",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1015",
+        "dealstageId": "1019"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Renewed",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Renewed",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 9,
+      "sourceId": "006NS000000D008",
+      "action": "create",
+      "label": "Quay Street Capital - Platform",
+      "properties": {
+        "dealname": "Quay Street Capital - Platform",
+        "amount": "48000",
+        "closedate": "1786147200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D008",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1012"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Negotiation",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Negotiation",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 10,
+      "sourceId": "006NS000000D009",
+      "action": "create",
+      "label": "Lumen Field Analytics - Platform",
+      "properties": {
+        "dealname": "Lumen Field Analytics - Platform",
+        "amount": "64000",
+        "closedate": "1788912000000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D009",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1013"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 11,
+      "sourceId": "006NS000000D010",
+      "action": "create",
+      "label": "Lumen Field Analytics - Renewal 2026",
+      "properties": {
+        "dealname": "Lumen Field Analytics - Renewal 2026",
+        "amount": "69120",
+        "closedate": "1791590400000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D010",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Identified",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1015",
+        "dealstageId": "1016"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Identified",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Identified",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 12,
+      "sourceId": "006NS000000D011",
+      "action": "create",
+      "label": "Copperline Manufacturing - Platform",
+      "properties": {
+        "dealname": "Copperline Manufacturing - Platform",
+        "amount": "72000",
+        "closedate": "1794355200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D011",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Lost",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1014"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Lost",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Lost",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 13,
+      "sourceId": "006NS000000D012",
+      "action": "create",
+      "label": "Kindred Learning - Platform",
+      "properties": {
+        "dealname": "Kindred Learning - Platform",
+        "amount": "96000",
+        "closedate": "1797033600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D012",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "New Lead",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1007",
+        "dealstageId": "1008"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "New Lead",
+        "sourcePipeline": "Sales",
+        "sourceStage": "New Lead",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 14,
+      "sourceId": "006NS000000D013",
+      "action": "create",
+      "label": "Kindred Learning - Renewal 2026",
+      "properties": {
+        "dealname": "Kindred Learning - Renewal 2026",
+        "amount": "103680",
+        "closedate": "1768262400000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D013",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1018"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Negotiation",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Negotiation",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 15,
+      "sourceId": "006NS000000D014",
+      "action": "create",
+      "label": "Sable Route Freight - Platform",
+      "properties": {
+        "dealname": "Sable Route Freight - Platform",
+        "amount": "120000",
+        "closedate": "1771027200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D014",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Qualified",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1009"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Qualified",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Qualified",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 16,
+      "sourceId": "006NS000000D015",
+      "action": "create",
+      "label": "Marlowe Legal Ops - Platform",
+      "properties": {
+        "dealname": "Marlowe Legal Ops - Platform",
+        "amount": "144000",
+        "closedate": "1773532800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D015",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Discovery",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1010"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Discovery",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Discovery",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 17,
+      "sourceId": "006NS000000D016",
+      "action": "create",
+      "label": "Finch & Howe Advisors - Platform",
+      "properties": {
+        "dealname": "Finch & Howe Advisors - Platform",
+        "amount": "18000",
+        "closedate": "1776297600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D016",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Proposal",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1011"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Proposal",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Proposal",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 18,
+      "sourceId": "006NS000000D017",
+      "action": "create",
+      "label": "Finch & Howe Advisors - Renewal 2026",
+      "properties": {
+        "dealname": "Finch & Howe Advisors - Renewal 2026",
+        "amount": "19440",
+        "closedate": "1778976000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D017",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Identified",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1016"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Identified",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Identified",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 19,
+      "sourceId": "006NS000000D018",
+      "action": "create",
+      "label": "Arclight Media - Platform",
+      "properties": {
+        "dealname": "Arclight Media - Platform",
+        "amount": "24000",
+        "closedate": "1781740800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D018",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1012"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Negotiation",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Negotiation",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 20,
+      "sourceId": "006NS000000D019",
+      "action": "create",
+      "label": "Plover Health - Platform",
+      "properties": {
+        "dealname": "Plover Health - Platform",
+        "amount": "36000",
+        "closedate": "1784419200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D019",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1007",
+        "dealstageId": "1013"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 21,
+      "sourceId": "006NS000000D020",
+      "action": "create",
+      "label": "Plover Health - Renewal 2026",
+      "properties": {
+        "dealname": "Plover Health - Renewal 2026",
+        "amount": "38880",
+        "closedate": "1787184000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D020",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1018"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Negotiation",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Negotiation",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 22,
+      "sourceId": "006NS000000D021",
+      "action": "create",
+      "label": "Redcedar Insurance - Platform",
+      "properties": {
+        "dealname": "Redcedar Insurance - Platform",
+        "amount": "42000",
+        "closedate": "1789948800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D021",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Lost",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1014"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Lost",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Lost",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 23,
+      "sourceId": "006NS000000D022",
+      "action": "create",
+      "label": "Paperplane HR - Platform",
+      "properties": {
+        "dealname": "Paperplane HR - Platform",
+        "amount": "48000",
+        "closedate": "1792627200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D022",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "New Lead",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1008"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "New Lead",
+        "sourcePipeline": "Sales",
+        "sourceStage": "New Lead",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 24,
+      "sourceId": "006NS000000D023",
+      "action": "create",
+      "label": "Paperplane HR - Renewal 2026",
+      "properties": {
+        "dealname": "Paperplane HR - Renewal 2026",
+        "amount": "51840",
+        "closedate": "1795392000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D023",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Churned",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1020"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Churned",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Churned",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 25,
+      "sourceId": "006NS000000D024",
+      "action": "create",
+      "label": "Southshore Clinics - Platform",
+      "properties": {
+        "dealname": "Southshore Clinics - Platform",
+        "amount": "64000",
+        "closedate": "1798070400000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D024",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Qualified",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1009"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Qualified",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Qualified",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 26,
+      "sourceId": "006NS000000D025",
+      "action": "create",
+      "label": "Oakmont Schools - Platform",
+      "properties": {
+        "dealname": "Oakmont Schools - Platform",
+        "amount": "72000",
+        "closedate": "1769299200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D025",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Discovery",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1007",
+        "dealstageId": "1010"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Discovery",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Discovery",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 27,
+      "sourceId": "006NS000000D026",
+      "action": "create",
+      "label": "Oakmont Schools - Renewal 2026",
+      "properties": {
+        "dealname": "Oakmont Schools - Renewal 2026",
+        "amount": "77760",
+        "closedate": "1772064000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D026",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Quoted",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1017"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Quoted",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Quoted",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 28,
+      "sourceId": "006NS000000D027",
+      "action": "create",
+      "label": "Blueharbor Mutual - Platform",
+      "properties": {
+        "dealname": "Blueharbor Mutual - Platform",
+        "amount": "96000",
+        "closedate": "1774569600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D027",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Proposal",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1011"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Proposal",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Proposal",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 29,
+      "sourceId": "006NS000000D028",
+      "action": "create",
+      "label": "Nimbus Retail Cloud - Platform",
+      "properties": {
+        "dealname": "Nimbus Retail Cloud - Platform",
+        "amount": "120000",
+        "closedate": "1775001600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D028",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1012"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Negotiation",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Negotiation",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 30,
+      "sourceId": "006NS000000D029",
+      "action": "create",
+      "label": "Nimbus Retail Cloud - Renewal 2026",
+      "properties": {
+        "dealname": "Nimbus Retail Cloud - Renewal 2026",
+        "amount": "129600",
+        "closedate": "1777680000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D029",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Renewed",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1019"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Renewed",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Renewed",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 31,
+      "sourceId": "006NS000000D030",
+      "action": "create",
+      "label": "Westferry Consulting - Platform",
+      "properties": {
+        "dealname": "Westferry Consulting - Platform",
+        "amount": "144000",
+        "closedate": "1780444800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D030",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1013"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 32,
+      "sourceId": "006NS000000D031",
+      "action": "create",
+      "label": "Larkspur Devices - Platform",
+      "properties": {
+        "dealname": "Larkspur Devices - Platform",
+        "amount": "18000",
+        "closedate": "1783123200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D031",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Lost",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1014"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Lost",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Lost",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 33,
+      "sourceId": "006NS000000D032",
+      "action": "create",
+      "label": "Larkspur Devices - Renewal 2026",
+      "properties": {
+        "dealname": "Larkspur Devices - Renewal 2026",
+        "amount": "19440",
+        "closedate": "1785888000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D032",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Identified",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1016"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Identified",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Identified",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 34,
+      "sourceId": "006NS000000D033",
+      "action": "create",
+      "label": "Ironwood Components - Platform",
+      "properties": {
+        "dealname": "Ironwood Components - Platform",
+        "amount": "24000",
+        "closedate": "1788652800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D033",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "New Lead",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1008"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "New Lead",
+        "sourcePipeline": "Sales",
+        "sourceStage": "New Lead",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 35,
+      "sourceId": "006NS000000D034",
+      "action": "create",
+      "label": "Summit Ledger - Platform",
+      "properties": {
+        "dealname": "Summit Ledger - Platform",
+        "amount": "36000",
+        "closedate": "1791331200000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000D034",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Qualified",
+        "hubspot_owner_id": "1002",
+        "pipelineId": "1007",
+        "dealstageId": "1009"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Qualified",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Qualified",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 36,
+      "sourceId": "006NS000000D035",
+      "action": "create",
+      "label": "Summit Ledger - Renewal 2026",
+      "properties": {
+        "dealname": "Summit Ledger - Renewal 2026",
+        "amount": "38880",
+        "closedate": "1794096000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Renewals",
+        "legacy_owner": "Samir Patel",
+        "legacy_external_id": "006NS000000D035",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Renewals",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1004",
+        "pipelineId": "1015",
+        "dealstageId": "1018"
+      },
+      "labels": {
+        "pipeline": "Northline Renewals",
+        "stage": "Negotiation",
+        "sourcePipeline": "Renewals",
+        "sourceStage": "Negotiation",
+        "owner": "Samir Patel"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 37,
+      "sourceId": "006NS000000D036",
+      "action": "create",
+      "label": "Lantern Freight - Platform",
+      "properties": {
+        "dealname": "Lantern Freight - Platform",
+        "amount": "42000",
+        "closedate": "1796774400000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000D036",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Discovery",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1010"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Discovery",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Discovery",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 38,
+      "sourceId": "006NS000000OORP",
+      "action": "create",
+      "label": "Missing Account - Platform",
+      "properties": {
+        "dealname": "Missing Account - Platform",
+        "amount": "42000",
+        "closedate": "1782777600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000OORP",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Proposal",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1011"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Proposal",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Proposal",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 39,
+      "sourceId": "006NS000000OBAD",
+      "action": "fail",
+      "reason": "unmapped stage \"Verbal Yes\" for pipeline \"Sales\"",
+      "label": "Verbal Commit - Platform",
+      "properties": {
+        "dealname": "Verbal Commit - Platform",
+        "amount": "18000",
+        "closedate": "1784073600000",
+        "dealtype": "newbusiness",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000OBAD",
+        "legacy_source": "salesforce"
+      },
+      "labels": {
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 40,
+      "sourceId": "006NS000000D001",
+      "action": "skip",
+      "reason": "duplicate source id in source; kept 006NS000000D001",
+      "label": "Northwind Robotics - duplicate opportunity row",
+      "properties": {
+        "dealname": "Northwind Robotics - duplicate opportunity row",
+        "amount": "96000",
+        "closedate": "1775001600000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000D001",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Avery Chen"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 41,
+      "sourceId": "006NS000000ODAT",
+      "action": "fail",
+      "reason": "invalid date \"yesterday\"",
+      "label": "Bad Close Date - Platform",
+      "properties": {
+        "dealname": "Bad Close Date - Platform",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Jordan Hale",
+        "legacy_external_id": "006NS000000ODAT",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Qualified"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Qualified",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Qualified",
+        "owner": "Jordan Hale"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 42,
+      "sourceId": "006NS000000DLOW",
+      "action": "create",
+      "label": "Case folded stage - Platform",
+      "properties": {
+        "dealname": "Case folded stage - Platform",
+        "amount": "64000",
+        "closedate": "1773532800000",
+        "dealtype": "newbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Riley Okonkwo",
+        "legacy_external_id": "006NS000000DLOW",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Closed Won",
+        "hubspot_owner_id": "1003",
+        "pipelineId": "1007",
+        "dealstageId": "1013"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Closed Won",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Closed Won",
+        "owner": "Riley Okonkwo"
+      }
+    },
+    {
+      "object": "deals",
+      "rowNumber": 43,
+      "sourceId": "006NS000000ODUP",
+      "action": "create",
+      "label": "Points at duplicate Northwind site",
+      "properties": {
+        "dealname": "Points at duplicate Northwind site",
+        "amount": "72000",
+        "closedate": "1775088000000",
+        "dealtype": "existingbusiness",
+        "legacy_pipeline": "Sales",
+        "legacy_owner": "Avery Chen",
+        "legacy_external_id": "006NS000000ODUP",
+        "legacy_source": "salesforce",
+        "pipeline": "Northline Sales",
+        "dealstage": "Negotiation",
+        "hubspot_owner_id": "1001",
+        "pipelineId": "1007",
+        "dealstageId": "1012"
+      },
+      "labels": {
+        "pipeline": "Northline Sales",
+        "stage": "Negotiation",
+        "sourcePipeline": "Sales",
+        "sourceStage": "Negotiation",
+        "owner": "Avery Chen"
+      }
+    }
+  ],
+  "associationResults": [
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C001",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A001",
+      "status": "create",
+      "fromHubspotId": "1046",
+      "toHubspotId": "1021"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C002",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A001",
+      "status": "create",
+      "fromHubspotId": "1047",
+      "toHubspotId": "1021"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C003",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A002",
+      "status": "create",
+      "fromHubspotId": "1048",
+      "toHubspotId": "1022"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C004",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A003",
+      "status": "create",
+      "fromHubspotId": "1049",
+      "toHubspotId": "1023"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C005",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A004",
+      "status": "create",
+      "fromHubspotId": "1050",
+      "toHubspotId": "1024"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C006",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A004",
+      "status": "create",
+      "fromHubspotId": "1051",
+      "toHubspotId": "1024"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C007",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A005",
+      "status": "create",
+      "fromHubspotId": "1052",
+      "toHubspotId": "1025"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C008",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A006",
+      "status": "create",
+      "fromHubspotId": "1053",
+      "toHubspotId": "1026"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C009",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A007",
+      "status": "create",
+      "fromHubspotId": "1054",
+      "toHubspotId": "1027"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C010",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A007",
+      "status": "create",
+      "fromHubspotId": "1055",
+      "toHubspotId": "1027"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C011",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A008",
+      "status": "create",
+      "fromHubspotId": "1056",
+      "toHubspotId": "1028"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C012",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A009",
+      "status": "create",
+      "fromHubspotId": "1057",
+      "toHubspotId": "1029"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C013",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A010",
+      "status": "create",
+      "fromHubspotId": "1058",
+      "toHubspotId": "1030"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C014",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A010",
+      "status": "create",
+      "fromHubspotId": "1059",
+      "toHubspotId": "1030"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C015",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A011",
+      "status": "create",
+      "fromHubspotId": "1060",
+      "toHubspotId": "1031"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C016",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A012",
+      "status": "create",
+      "fromHubspotId": "1061",
+      "toHubspotId": "1032"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C017",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A013",
+      "status": "create",
+      "fromHubspotId": "1062",
+      "toHubspotId": "1033"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C018",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A013",
+      "status": "create",
+      "fromHubspotId": "1063",
+      "toHubspotId": "1033"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C019",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A014",
+      "status": "create",
+      "fromHubspotId": "1064",
+      "toHubspotId": "1034"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C020",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A015",
+      "status": "create",
+      "fromHubspotId": "1065",
+      "toHubspotId": "1035"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C021",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A016",
+      "status": "create",
+      "fromHubspotId": "1066",
+      "toHubspotId": "1036"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C022",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A016",
+      "status": "create",
+      "fromHubspotId": "1067",
+      "toHubspotId": "1036"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C023",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A017",
+      "status": "create",
+      "fromHubspotId": "1068",
+      "toHubspotId": "1037"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C024",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A018",
+      "status": "create",
+      "fromHubspotId": "1069",
+      "toHubspotId": "1038"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C025",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A019",
+      "status": "create",
+      "fromHubspotId": "1070",
+      "toHubspotId": "1039"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C026",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A019",
+      "status": "create",
+      "fromHubspotId": "1071",
+      "toHubspotId": "1039"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C027",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A020",
+      "status": "create",
+      "fromHubspotId": "1072",
+      "toHubspotId": "1040"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C028",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A021",
+      "status": "create",
+      "fromHubspotId": "1073",
+      "toHubspotId": "1041"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C029",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A022",
+      "status": "create",
+      "fromHubspotId": "1074",
+      "toHubspotId": "1042"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C030",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A022",
+      "status": "create",
+      "fromHubspotId": "1075",
+      "toHubspotId": "1042"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C031",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A023",
+      "status": "create",
+      "fromHubspotId": "1076",
+      "toHubspotId": "1043"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000C032",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A024",
+      "status": "create",
+      "fromHubspotId": "1077",
+      "toHubspotId": "1044"
+    },
+    {
+      "key": "contactCompany",
+      "fromObject": "contacts",
+      "fromSourceId": "003NS000000CPHN",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A003",
+      "status": "create",
+      "fromHubspotId": "1078",
+      "toHubspotId": "1023"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D001",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A001",
+      "status": "create",
+      "fromHubspotId": "1079",
+      "toHubspotId": "1021"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D001",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C001",
+      "status": "create",
+      "fromHubspotId": "1079",
+      "toHubspotId": "1046"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D002",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A001",
+      "status": "create",
+      "fromHubspotId": "1080",
+      "toHubspotId": "1021"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D002",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C001",
+      "status": "create",
+      "fromHubspotId": "1080",
+      "toHubspotId": "1046"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D003",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A002",
+      "status": "create",
+      "fromHubspotId": "1081",
+      "toHubspotId": "1022"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D003",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C003",
+      "status": "create",
+      "fromHubspotId": "1081",
+      "toHubspotId": "1048"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D004",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A002",
+      "status": "create",
+      "fromHubspotId": "1082",
+      "toHubspotId": "1022"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D004",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C003",
+      "status": "create",
+      "fromHubspotId": "1082",
+      "toHubspotId": "1048"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D005",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A003",
+      "status": "create",
+      "fromHubspotId": "1083",
+      "toHubspotId": "1023"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D005",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C004",
+      "status": "create",
+      "fromHubspotId": "1083",
+      "toHubspotId": "1049"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D006",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A004",
+      "status": "create",
+      "fromHubspotId": "1084",
+      "toHubspotId": "1024"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D006",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C005",
+      "status": "create",
+      "fromHubspotId": "1084",
+      "toHubspotId": "1050"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D007",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A004",
+      "status": "create",
+      "fromHubspotId": "1085",
+      "toHubspotId": "1024"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D007",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C005",
+      "status": "create",
+      "fromHubspotId": "1085",
+      "toHubspotId": "1050"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D008",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A005",
+      "status": "create",
+      "fromHubspotId": "1086",
+      "toHubspotId": "1025"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D008",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C007",
+      "status": "create",
+      "fromHubspotId": "1086",
+      "toHubspotId": "1052"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D009",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A006",
+      "status": "create",
+      "fromHubspotId": "1087",
+      "toHubspotId": "1026"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D009",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C008",
+      "status": "create",
+      "fromHubspotId": "1087",
+      "toHubspotId": "1053"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D010",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A006",
+      "status": "create",
+      "fromHubspotId": "1088",
+      "toHubspotId": "1026"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D010",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C008",
+      "status": "create",
+      "fromHubspotId": "1088",
+      "toHubspotId": "1053"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D011",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A007",
+      "status": "create",
+      "fromHubspotId": "1089",
+      "toHubspotId": "1027"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D011",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C009",
+      "status": "create",
+      "fromHubspotId": "1089",
+      "toHubspotId": "1054"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D012",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A008",
+      "status": "create",
+      "fromHubspotId": "1090",
+      "toHubspotId": "1028"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D012",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C011",
+      "status": "create",
+      "fromHubspotId": "1090",
+      "toHubspotId": "1056"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D013",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A008",
+      "status": "create",
+      "fromHubspotId": "1091",
+      "toHubspotId": "1028"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D013",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C011",
+      "status": "create",
+      "fromHubspotId": "1091",
+      "toHubspotId": "1056"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D014",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A009",
+      "status": "create",
+      "fromHubspotId": "1092",
+      "toHubspotId": "1029"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D014",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C012",
+      "status": "create",
+      "fromHubspotId": "1092",
+      "toHubspotId": "1057"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D015",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A010",
+      "status": "create",
+      "fromHubspotId": "1093",
+      "toHubspotId": "1030"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D015",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C013",
+      "status": "create",
+      "fromHubspotId": "1093",
+      "toHubspotId": "1058"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D016",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A011",
+      "status": "create",
+      "fromHubspotId": "1094",
+      "toHubspotId": "1031"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D016",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C015",
+      "status": "create",
+      "fromHubspotId": "1094",
+      "toHubspotId": "1060"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D017",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A011",
+      "status": "create",
+      "fromHubspotId": "1095",
+      "toHubspotId": "1031"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D017",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C015",
+      "status": "create",
+      "fromHubspotId": "1095",
+      "toHubspotId": "1060"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D018",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A012",
+      "status": "create",
+      "fromHubspotId": "1096",
+      "toHubspotId": "1032"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D018",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C016",
+      "status": "create",
+      "fromHubspotId": "1096",
+      "toHubspotId": "1061"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D019",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A013",
+      "status": "create",
+      "fromHubspotId": "1097",
+      "toHubspotId": "1033"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D019",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C017",
+      "status": "create",
+      "fromHubspotId": "1097",
+      "toHubspotId": "1062"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D020",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A013",
+      "status": "create",
+      "fromHubspotId": "1098",
+      "toHubspotId": "1033"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D020",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C017",
+      "status": "create",
+      "fromHubspotId": "1098",
+      "toHubspotId": "1062"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D021",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A014",
+      "status": "create",
+      "fromHubspotId": "1099",
+      "toHubspotId": "1034"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D021",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C019",
+      "status": "create",
+      "fromHubspotId": "1099",
+      "toHubspotId": "1064"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D022",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A015",
+      "status": "create",
+      "fromHubspotId": "1100",
+      "toHubspotId": "1035"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D022",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C020",
+      "status": "create",
+      "fromHubspotId": "1100",
+      "toHubspotId": "1065"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D023",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A015",
+      "status": "create",
+      "fromHubspotId": "1101",
+      "toHubspotId": "1035"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D023",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C020",
+      "status": "create",
+      "fromHubspotId": "1101",
+      "toHubspotId": "1065"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D024",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A016",
+      "status": "create",
+      "fromHubspotId": "1102",
+      "toHubspotId": "1036"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D024",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C021",
+      "status": "create",
+      "fromHubspotId": "1102",
+      "toHubspotId": "1066"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D025",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A017",
+      "status": "create",
+      "fromHubspotId": "1103",
+      "toHubspotId": "1037"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D025",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C023",
+      "status": "create",
+      "fromHubspotId": "1103",
+      "toHubspotId": "1068"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D026",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A017",
+      "status": "create",
+      "fromHubspotId": "1104",
+      "toHubspotId": "1037"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D026",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C023",
+      "status": "create",
+      "fromHubspotId": "1104",
+      "toHubspotId": "1068"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D027",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A018",
+      "status": "create",
+      "fromHubspotId": "1105",
+      "toHubspotId": "1038"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D027",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C024",
+      "status": "create",
+      "fromHubspotId": "1105",
+      "toHubspotId": "1069"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D028",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A019",
+      "status": "create",
+      "fromHubspotId": "1106",
+      "toHubspotId": "1039"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D028",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C025",
+      "status": "create",
+      "fromHubspotId": "1106",
+      "toHubspotId": "1070"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D029",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A019",
+      "status": "create",
+      "fromHubspotId": "1107",
+      "toHubspotId": "1039"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D029",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C025",
+      "status": "create",
+      "fromHubspotId": "1107",
+      "toHubspotId": "1070"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D030",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A020",
+      "status": "create",
+      "fromHubspotId": "1108",
+      "toHubspotId": "1040"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D030",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C027",
+      "status": "create",
+      "fromHubspotId": "1108",
+      "toHubspotId": "1072"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D031",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A021",
+      "status": "create",
+      "fromHubspotId": "1109",
+      "toHubspotId": "1041"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D031",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C028",
+      "status": "create",
+      "fromHubspotId": "1109",
+      "toHubspotId": "1073"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D032",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A021",
+      "status": "create",
+      "fromHubspotId": "1110",
+      "toHubspotId": "1041"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D032",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C028",
+      "status": "create",
+      "fromHubspotId": "1110",
+      "toHubspotId": "1073"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D033",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A022",
+      "status": "create",
+      "fromHubspotId": "1111",
+      "toHubspotId": "1042"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D033",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C029",
+      "status": "create",
+      "fromHubspotId": "1111",
+      "toHubspotId": "1074"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D034",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A023",
+      "status": "create",
+      "fromHubspotId": "1112",
+      "toHubspotId": "1043"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D034",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C031",
+      "status": "create",
+      "fromHubspotId": "1112",
+      "toHubspotId": "1076"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D035",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A023",
+      "status": "create",
+      "fromHubspotId": "1113",
+      "toHubspotId": "1043"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D035",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C031",
+      "status": "create",
+      "fromHubspotId": "1113",
+      "toHubspotId": "1076"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D036",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A024",
+      "status": "create",
+      "fromHubspotId": "1114",
+      "toHubspotId": "1044"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000D036",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C032",
+      "status": "create",
+      "fromHubspotId": "1114",
+      "toHubspotId": "1077"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000OORP",
+      "toObject": "companies",
+      "toSourceId": "001NS000000AMISS",
+      "status": "skip",
+      "reason": "orphan: no companies 001NS000000AMISS"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000OORP",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C001",
+      "status": "create",
+      "fromHubspotId": "1115",
+      "toHubspotId": "1046"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000DLOW",
+      "toObject": "companies",
+      "toSourceId": "001NS000000A006",
+      "status": "create",
+      "fromHubspotId": "1116",
+      "toHubspotId": "1026"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000DLOW",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C008",
+      "status": "create",
+      "fromHubspotId": "1116",
+      "toHubspotId": "1053"
+    },
+    {
+      "key": "dealCompany",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000ODUP",
+      "toObject": "companies",
+      "toSourceId": "001NS000000ADUP",
+      "status": "create",
+      "fromHubspotId": "1117",
+      "toHubspotId": "1021"
+    },
+    {
+      "key": "dealContact",
+      "fromObject": "deals",
+      "fromSourceId": "006NS000000ODUP",
+      "toObject": "contacts",
+      "toSourceId": "003NS000000C001",
+      "status": "create",
+      "fromHubspotId": "1117",
+      "toHubspotId": "1046"
+    }
+  ],
+  "reconciliation": {
+    "performed": true,
+    "objects": {
+      "companies": {
+        "expected": 25,
+        "readBack": 25,
+        "missingIds": [],
+        "match": true
+      },
+      "contacts": {
+        "expected": 33,
+        "readBack": 33,
+        "missingIds": [],
+        "match": true
+      },
+      "deals": {
+        "expected": 39,
+        "readBack": 39,
+        "missingIds": [],
+        "match": true
+      }
+    },
+    "associations": {
+      "contactCompany": {
+        "expected": 33,
+        "verified": 33,
+        "missing": [],
+        "match": true
+      },
+      "dealCompany": {
+        "expected": 38,
+        "verified": 38,
+        "missing": [],
+        "match": true
+      },
+      "dealContact": {
+        "expected": 39,
+        "verified": 39,
+        "missing": [],
+        "match": true
+      }
+    },
+    "match": true
+  },
+  "notes": [
+    "2 rows kept legacy_owner and did not set hubspot_owner_id because no owner matched."
+  ],
+  "mapping": {
+    "source": "salesforce",
+    "title": "Northline East",
+    "description": "US East and Central book exported from Salesforce for Northline, a fictional revenue-intelligence vendor. Includes the new-business Sales pipeline and a Renewals pipeline. Rows are synthetic and use the reserved .example domain.\n",
+    "objects": {
+      "companies": {
+        "file": "accounts.csv",
+        "idColumn": "Account ID",
+        "upsertIdProperty": "legacy_external_id",
+        "dedupeProperty": "domain",
+        "ownerColumn": "Account Owner",
+        "associations": [],
+        "fields": [
+          {
+            "column": "Account Name",
+            "property": "name",
+            "required": true,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Website",
+            "property": "domain",
+            "required": false,
+            "transforms": [
+              "domain"
+            ]
+          },
+          {
+            "column": "Industry",
+            "property": "industry",
+            "required": false,
+            "transforms": [
+              "trim"
+            ],
+            "valueMap": {
+              "Software": "COMPUTER_SOFTWARE",
+              "Manufacturing": "MECHANICAL_OR_INDUSTRIAL_ENGINEERING",
+              "Healthcare": "HOSPITAL_HEALTH_CARE",
+              "Financial Services": "FINANCIAL_SERVICES",
+              "Logistics": "LOGISTICS_AND_SUPPLY_CHAIN",
+              "Professional Services": "MANAGEMENT_CONSULTING",
+              "Media": "ONLINE_MEDIA",
+              "Education": "E_LEARNING",
+              "Insurance": "INSURANCE"
+            }
+          },
+          {
+            "column": "Phone",
+            "property": "phone",
+            "required": false,
+            "transforms": [
+              "phone"
+            ]
+          },
+          {
+            "column": "Billing City",
+            "property": "city",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Billing State",
+            "property": "state",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Billing Country",
+            "property": "country",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Type",
+            "property": "lifecyclestage",
+            "required": false,
+            "transforms": [
+              "trim"
+            ],
+            "valueMap": {
+              "Prospect": "lead",
+              "Customer": "customer",
+              "Partner": "opportunity",
+              "Former Customer": "other"
+            }
+          },
+          {
+            "column": "Employees",
+            "property": "numberofemployees",
+            "required": false,
+            "transforms": [
+              "number"
+            ]
+          },
+          {
+            "column": "Description",
+            "property": "description",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          }
+        ]
+      },
+      "contacts": {
+        "file": "contacts.csv",
+        "idColumn": "Contact ID",
+        "upsertIdProperty": "legacy_external_id",
+        "dedupeProperty": "email",
+        "ownerColumn": "Contact Owner",
+        "associations": [
+          {
+            "column": "Account ID",
+            "to": "companies"
+          }
+        ],
+        "fields": [
+          {
+            "column": "First Name",
+            "property": "firstname",
+            "required": true,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Last Name",
+            "property": "lastname",
+            "required": true,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Email",
+            "property": "email",
+            "required": true,
+            "transforms": [
+              "email"
+            ]
+          },
+          {
+            "column": "Title",
+            "property": "jobtitle",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Phone",
+            "property": "phone",
+            "required": false,
+            "transforms": [
+              "phone"
+            ]
+          },
+          {
+            "column": "Mobile",
+            "property": "mobilephone",
+            "required": false,
+            "transforms": [
+              "phone"
+            ]
+          },
+          {
+            "column": "Lead Source",
+            "property": "legacy_lead_source",
+            "required": false,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Lifecycle Stage",
+            "property": "lifecyclestage",
+            "required": false,
+            "transforms": [
+              "trim"
+            ],
+            "valueMap": {
+              "Subscriber": "subscriber",
+              "Lead": "lead",
+              "MQL": "marketingqualifiedlead",
+              "SQL": "salesqualifiedlead",
+              "Opportunity": "opportunity",
+              "Customer": "customer",
+              "Evangelist": "evangelist",
+              "Other": "other"
+            }
+          }
+        ]
+      },
+      "deals": {
+        "file": "opportunities.csv",
+        "idColumn": "Opportunity ID",
+        "upsertIdProperty": "legacy_external_id",
+        "ownerColumn": "Opportunity Owner",
+        "dealPipelineColumn": "Pipeline",
+        "dealStageColumn": "Stage",
+        "associations": [
+          {
+            "column": "Account ID",
+            "to": "companies"
+          },
+          {
+            "column": "Primary Contact ID",
+            "to": "contacts"
+          }
+        ],
+        "fields": [
+          {
+            "column": "Opportunity Name",
+            "property": "dealname",
+            "required": true,
+            "transforms": [
+              "trim"
+            ]
+          },
+          {
+            "column": "Amount",
+            "property": "amount",
+            "required": false,
+            "transforms": [
+              "number"
+            ]
+          },
+          {
+            "column": "Close Date",
+            "property": "closedate",
+            "required": true,
+            "transforms": [
+              "date"
+            ]
+          },
+          {
+            "column": "Type",
+            "property": "dealtype",
+            "required": false,
+            "transforms": [
+              "trim"
+            ],
+            "valueMap": {
+              "New Business": "newbusiness",
+              "Renewal": "existingbusiness",
+              "Expansion": "existingbusiness",
+              "Partnership": "newbusiness"
+            }
+          }
+        ]
+      }
+    },
+    "pipelines": [
+      {
+        "sourceName": "Sales",
+        "hubspotLabel": "Northline Sales",
+        "stages": [
+          {
+            "source": "New Lead",
+            "label": "New Lead",
+            "probability": "0.1",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Qualified",
+            "label": "Qualified",
+            "probability": "0.2",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Discovery",
+            "label": "Discovery",
+            "probability": "0.4",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Proposal",
+            "label": "Proposal",
+            "probability": "0.6",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Negotiation",
+            "label": "Negotiation",
+            "probability": "0.8",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Closed Won",
+            "label": "Closed Won",
+            "probability": "1.0",
+            "closedWon": true,
+            "closedLost": false
+          },
+          {
+            "source": "Closed Lost",
+            "label": "Closed Lost",
+            "probability": "0.0",
+            "closedWon": false,
+            "closedLost": true
+          }
+        ]
+      },
+      {
+        "sourceName": "Renewals",
+        "hubspotLabel": "Northline Renewals",
+        "stages": [
+          {
+            "source": "Identified",
+            "label": "Identified",
+            "probability": "0.2",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Quoted",
+            "label": "Quoted",
+            "probability": "0.5",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Negotiation",
+            "label": "Negotiation",
+            "probability": "0.8",
+            "closedWon": false,
+            "closedLost": false
+          },
+          {
+            "source": "Renewed",
+            "label": "Renewed",
+            "probability": "1.0",
+            "closedWon": true,
+            "closedLost": false
+          },
+          {
+            "source": "Churned",
+            "label": "Churned",
+            "probability": "0.0",
+            "closedWon": false,
+            "closedLost": true
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "object": "companies",
+        "name": "legacy_external_id",
+        "label": "Legacy external ID",
+        "hasUniqueValue": true
+      },
+      {
+        "object": "companies",
+        "name": "legacy_source",
+        "label": "Legacy source",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "companies",
+        "name": "legacy_owner",
+        "label": "Legacy owner",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "contacts",
+        "name": "legacy_external_id",
+        "label": "Legacy external ID",
+        "hasUniqueValue": true
+      },
+      {
+        "object": "contacts",
+        "name": "legacy_source",
+        "label": "Legacy source",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "contacts",
+        "name": "legacy_owner",
+        "label": "Legacy owner",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "contacts",
+        "name": "legacy_lead_source",
+        "label": "Legacy lead source",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "deals",
+        "name": "legacy_external_id",
+        "label": "Legacy external ID",
+        "hasUniqueValue": true
+      },
+      {
+        "object": "deals",
+        "name": "legacy_source",
+        "label": "Legacy source",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "deals",
+        "name": "legacy_owner",
+        "label": "Legacy owner",
+        "hasUniqueValue": false
+      },
+      {
+        "object": "deals",
+        "name": "legacy_pipeline",
+        "label": "Legacy pipeline",
+        "hasUniqueValue": false
+      }
+    ]
+  }
+}

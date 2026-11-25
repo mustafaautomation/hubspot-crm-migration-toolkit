@@ -1,0 +1,24 @@
+Deal ID,Deal Name,Account ID,Contact ID,Stage,Pipeline,Amount,Closing Date,Type,Deal Owner
+4158200002000001,Greyfriars Analytics - Platform,4158200000000001,4158200001000001,Closed Won,Sales,48000.00,2026-10-10,New Business,Jordan Hale
+4158200002000002,Greyfriars Analytics - Success plan,4158200000000001,4158200001000001,Onboarding,Customer Success,24000,11/11/2026,Renewal,Samir Patel
+4158200002000003,Northline Canada Desk - Platform,4158200000000002,4158200001000003,Needs Analysis,Sales,"$64,000",12-Dec-2026,New Business,Samir Patel
+4158200002000004,Northline Canada Desk - Success plan,4158200000000002,4158200001000003,Adopted,Customer Success,36000.00,2026-01-13,Renewal,Samir Patel
+4158200002000005,Paper Lantern Agency - Platform,4158200000000003,4158200001000004,Value Proposition,Sales,72000,2/14/2026,Partnership,Quinn Alvarez
+4158200002000006,Bricklane Clinics - Platform,4158200000000004,4158200001000005,Proposal/Price Quote,Sales,"$96,000",15-Mar-2026,New Business,Riley Okonkwo
+4158200002000007,Sable & Birch - Platform,4158200000000005,4158200001000007,Negotiation/Review,Sales,120000.00,2026-04-16,New Business,Jordan Hale
+4158200002000008,Red Kite Manufacturing - Platform,4158200000000006,4158200001000008,Closed Won,Sales,144000,5/17/2026,New Business,Morgan Ellis
+4158200002000009,Red Kite Manufacturing - Success plan,4158200000000006,4158200001000008,Onboarding,Customer Success,"$72,000",18-Jun-2026,Renewal,Samir Patel
+4158200002000010,Harbor School Group - Platform,4158200000000007,4158200001000009,Closed Lost,Sales,18000.00,2026-07-19,New Business,Samir Patel
+4158200002000011,Lowcountry Freight - Platform,4158200000000008,4158200001000011,Qualification,Sales,24000,8/20/2026,New Business,Riley Okonkwo
+4158200002000012,Lowcountry Freight - Success plan,4158200000000008,4158200001000011,Expansion,Customer Success,"$120,000",21-Sep-2026,Renewal,Samir Patel
+4158200002000013,Kindling HR - Platform,4158200000000009,4158200001000012,Needs Analysis,Sales,36000.00,2026-10-22,New Business,Avery Chen
+4158200002000014,Opal Mutual - Platform,4158200000000010,4158200001000013,Value Proposition,Sales,42000,11/23/2026,New Business,Jordan Hale
+4158200002000015,Opal Mutual - Success plan,4158200000000010,4158200001000013,Churned,Customer Success,"$18,000",24-Dec-2026,Renewal,Samir Patel
+4158200002000016,Cedarhouse Legal - Platform,4158200000000011,4158200001000015,Proposal/Price Quote,Sales,48000.00,2026-01-25,Partnership,Quinn Alvarez
+4158200002000017,Mesa Diagnostics - Platform,4158200000000012,4158200001000016,Negotiation/Review,Sales,64000,2/26/2026,New Business,Samir Patel
+4158200002000018,Northspan Components - Platform,4158200000000013,4158200001000017,Closed Won,Sales,"$72,000",27-Mar-2026,New Business,Morgan Ellis
+4158200002000019,Northspan Components - Success plan,4158200000000013,4158200001000017,Expansion,Customer Success,42000.00,2026-04-01,Renewal,Samir Patel
+4158200002000020,Lumen Parish Media - Platform,4158200000000014,4158200001000019,Closed Lost,Sales,96000,5/2/2026,New Business,Jordan Hale
+4158200002009099,Orphan partner deal,4158200000000000,4158200001000001,Qualification,Sales,36000,2026-09-01,New Business,Jordan Hale
+4158200002009098,Unmapped Zoho stage,4158200000000003,4158200001000004,Verbal Commit,Sales,18000,2026-09-15,Partnership,Quinn Alvarez
+4158200002000001,Greyfriars duplicate deal,4158200000000001,4158200001000001,Closed Won,Sales,96000,2026-03-20,New Business,Jordan Hale

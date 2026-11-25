@@ -1,0 +1,29 @@
+Account ID,Account Name,Website,Industry,Phone,Billing City,Billing State,Billing Country,Type,Account Owner,Employees,Description
+001NS000000A001,Northwind Robotics,https://www.northwindrobotics.example,Manufacturing,(512) 555-0100,Austin,TX,United States,Customer,Avery Chen,420,Inspection robots for regional plants.
+001NS000000A002,Cedar & Pine Studio,https://cedarandpine.example/,Media,617.555.0101,Portland,OR,United States,Customer,Jordan Hale,85,Brand studio for outdoor retailers.
+001NS000000A003,Brightpath Logistics,brightpathlogistics.example,Logistics,+1 312 555 0102,Chicago,IL,United States,Prospect,Riley Okonkwo,610,Regional LTL carrier covering the Midwest.
+001NS000000A004,Harborline Clinics,https://www.harborlineclinics.example,Healthcare,2065550103,Boston,MA,United States,Customer,Avery Chen,240,Outpatient specialty clinics.
+001NS000000A005,Quay Street Capital,https://quaystreet.example/,Financial Services,(415) 555-0104,New York,NY,United States,Prospect,Jordan Hale,150,Middle-market private credit.
+001NS000000A006,Lumen Field Analytics,lumenfield.example,Software,303.555.0105,Seattle,WA,United States,Customer,Riley Okonkwo,190,Product analytics for B2B SaaS.
+001NS000000A007,Copperline Manufacturing,https://www.copperline.example,Manufacturing,+1 404 555 0106,Detroit,MI,United States,Prospect,Avery Chen,880,Precision metal components.
+001NS000000A008,Kindred Learning,https://kindredlearning.example/,Education,6465550107,Minneapolis,MN,United States,Customer,Samir Patel,310,Corporate learning programs.
+001NS000000A009,Sable Route Freight,sableroute.example,Logistics,(702) 555-0108,Atlanta,GA,United States,Prospect,Riley Okonkwo,540,Dedicated fleet for grocery shippers.
+001NS000000A010,Marlowe Legal Ops,https://www.marlowegal.example,Professional Services,919.555.0109,Washington,DC,United States,Prospect,Jordan Hale,70,Legal operations consultancy.
+001NS000000A011,Finch & Howe Advisors,https://finchhowe.example/,Professional Services,+1 512 555 0110,Chicago,IL,United States,Customer,Avery Chen,95,CFO advisory for founder-led firms.
+001NS000000A012,Arclight Media,arclightmedia.example,Media,6175550111,Los Angeles,CA,United States,Prospect,Jordan Hale,140,B2B podcast network.
+001NS000000A013,Plover Health,https://www.ploverhealth.example,Healthcare,(312) 555-0112,Raleigh,NC,United States,Customer,Samir Patel,260,Home infusion services.
+001NS000000A014,Redcedar Insurance,https://redcedar.example/,Insurance,206.555.0113,Charlotte,NC,United States,Prospect,Riley Okonkwo,430,Commercial package carrier.
+001NS000000A015,Paperplane HR,paperplanehr.example,Software,+1 415 555 0114,Austin,TX,United States,Customer,Avery Chen,210,HRIS for multi-state employers.
+001NS000000A016,Southshore Clinics,https://www.southshoreclinics.example,Healthcare,3035550115,Miami,FL,United States,Prospect,Jordan Hale,180,Orthopedic group.
+001NS000000A017,Oakmont Schools,https://oakmontschools.example/,Education,(404) 555-0116,Columbus,OH,United States,Customer,Samir Patel,720,Regional independent school network.
+001NS000000A018,Blueharbor Mutual,blueharbor.example,Insurance,646.555.0117,Hartford,CT,United States,Prospect,Riley Okonkwo,390,Mutual insurer for trades.
+001NS000000A019,Nimbus Retail Cloud,https://www.nimbusretail.example,Software,+1 702 555 0118,San Francisco,CA,United States,Customer,Avery Chen,160,Inventory planning for specialty retail.
+001NS000000A020,Westferry Consulting,https://westferry.example/,Professional Services,9195550119,Boston,MA,United States,Partner,Jordan Hale,55,Implementation partner for revenue tools.
+001NS000000A021,Larkspur Devices,larkspurdevices.example,Healthcare,(512) 555-0120,Cambridge,MA,United States,Customer,Riley Okonkwo,300,Diagnostic device manufacturer.
+001NS000000A022,Ironwood Components,https://www.ironwoodcomponents.example,Manufacturing,617.555.0121,Cleveland,OH,United States,Prospect,Avery Chen,640,Industrial valve supplier.
+001NS000000A023,Summit Ledger,https://summitledger.example/,Financial Services,+1 312 555 0122,Denver,CO,United States,Customer,Jordan Hale,125,Outsourced controllership.
+001NS000000A024,Lantern Freight,lanternfreight.example,Logistics,2065550123,Kansas City,MO,United States,Prospect,Riley Okonkwo,410,Final-mile for medical devices.
+001NS000000ADUP,Northwind Robotics (stale import),https://WWW.northwindrobotics.example/about,Manufacturing,(512) 555-0142 x12,Austin,TX,United States,Customer,Avery Chen,420,Duplicate website of the Austin robotics account.
+001NS000000ABAD,Astrology Insights Desk,astrologyinsights.example,Astrology,512.555.0177,Austin,TX,United States,Prospect,Avery Chen,12,Unmapped industry enum.
+001NS000000ANON,,missingname.example,Software,5125550104,Austin,TX,United States,Prospect,Avery Chen,20,Account name was blank in the export.
+001NS000000ADOM,Broken Website Co,not a domain,Software,call the office,Austin,TX,United States,Prospect,Former Rep,15,Website and phone do not parse.

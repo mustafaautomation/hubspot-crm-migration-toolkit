@@ -1,0 +1,99 @@
+source: zoho
+title: Northline Partner Desk
+description: >
+  Smaller partner-led book exported from Zoho CRM. Sales stages use Zoho's
+  default names and land on the shared Northline Sales pipeline, including a
+  Value Proposition stage the other books do not have. Customer Success is a
+  second pipeline. Synthetic data only.
+
+owners:
+  - { name: Avery Chen, email: avery.chen@northline.example }
+  - { name: Jordan Hale, email: jordan.hale@northline.example }
+  - { name: Riley Okonkwo, email: riley.okonkwo@northline.example }
+  - { name: Samir Patel, email: samir.patel@northline.example }
+  - { name: Quinn Alvarez, email: quinn.alvarez@northline.example }
+  - { name: Morgan Ellis, email: morgan.ellis@northline.example }
+
+properties:
+  - { object: companies, name: legacy_external_id, label: Legacy external ID, type: string, fieldType: text, groupName: companyinformation, hasUniqueValue: true, description: Source-system id used for idempotent upserts. }
+  - { object: companies, name: legacy_source, label: Legacy source, type: string, fieldType: text, groupName: companyinformation }
+  - { object: companies, name: legacy_owner, label: Legacy owner, type: string, fieldType: text, groupName: companyinformation }
+  - { object: contacts, name: legacy_external_id, label: Legacy external ID, type: string, fieldType: text, groupName: contactinformation, hasUniqueValue: true, description: Source-system id used for idempotent upserts. }
+  - { object: contacts, name: legacy_source, label: Legacy source, type: string, fieldType: text, groupName: contactinformation }
+  - { object: contacts, name: legacy_owner, label: Legacy owner, type: string, fieldType: text, groupName: contactinformation }
+  - { object: contacts, name: legacy_lead_source, label: Legacy lead source, type: string, fieldType: text, groupName: contactinformation }
+  - { object: deals, name: legacy_external_id, label: Legacy external ID, type: string, fieldType: text, groupName: dealinformation, hasUniqueValue: true, description: Source-system id used for idempotent upserts. }
+  - { object: deals, name: legacy_source, label: Legacy source, type: string, fieldType: text, groupName: dealinformation }
+  - { object: deals, name: legacy_owner, label: Legacy owner, type: string, fieldType: text, groupName: dealinformation }
+  - { object: deals, name: legacy_pipeline, label: Legacy pipeline, type: string, fieldType: text, groupName: dealinformation }
+
+pipelines:
+  - sourceName: Sales
+    hubspotLabel: Northline Sales
+    stages:
+      - { source: Qualification, label: Qualified, probability: "0.2" }
+      - { source: Needs Analysis, label: Discovery, probability: "0.4" }
+      - { source: Value Proposition, label: Value Proposition, probability: "0.5" }
+      - { source: Proposal/Price Quote, label: Proposal, probability: "0.6" }
+      - { source: Negotiation/Review, label: Negotiation, probability: "0.8" }
+      - { source: Closed Won, label: Closed Won, probability: "1.0", closedWon: true }
+      - { source: Closed Lost, label: Closed Lost, probability: "0.0", closedLost: true }
+  - sourceName: Customer Success
+    hubspotLabel: Northline Customer Success
+    stages:
+      - { source: Onboarding, label: Onboarding, probability: "0.3" }
+      - { source: Adopted, label: Adopted, probability: "0.6" }
+      - { source: Expansion, label: Expansion, probability: "0.8" }
+      - { source: Renewed, label: Renewed, probability: "1.0", closedWon: true }
+      - { source: Churned, label: Churned, probability: "0.0", closedLost: true }
+
+objects:
+  companies:
+    file: accounts.csv
+    idColumn: Account ID
+    upsertIdProperty: legacy_external_id
+    dedupeProperty: domain
+    ownerColumn: Account Owner
+    fields:
+      - { column: Account Name, property: name, required: true, transforms: [trim] }
+      - { column: Website, property: domain, transforms: [domain] }
+      - { column: Industry, property: industry, transforms: [trim], valueMap: { Software: COMPUTER_SOFTWARE, Manufacturing: MECHANICAL_OR_INDUSTRIAL_ENGINEERING, Healthcare: HOSPITAL_HEALTH_CARE, "Financial Services": FINANCIAL_SERVICES, Logistics: LOGISTICS_AND_SUPPLY_CHAIN, "Professional Services": MANAGEMENT_CONSULTING, Media: ONLINE_MEDIA, Education: E_LEARNING, Insurance: INSURANCE } }
+      - { column: Phone, property: phone, transforms: [phone] }
+      - { column: Billing City, property: city, transforms: [trim] }
+      - { column: Billing State, property: state, transforms: [trim] }
+      - { column: Billing Country, property: country, transforms: [trim] }
+      - { column: Account Type, property: lifecyclestage, transforms: [trim], valueMap: { Prospect: lead, Customer: customer, Partner: opportunity, "Former Customer": other } }
+      - { column: Employees, property: numberofemployees, transforms: [number] }
+      - { column: Description, property: description, transforms: [trim] }
+  contacts:
+    file: contacts.csv
+    idColumn: Contact ID
+    upsertIdProperty: legacy_external_id
+    dedupeProperty: email
+    ownerColumn: Contact Owner
+    associations:
+      - { column: Account ID, to: companies }
+    fields:
+      - { column: First Name, property: firstname, required: true, transforms: [trim] }
+      - { column: Last Name, property: lastname, required: true, transforms: [trim] }
+      - { column: Email, property: email, required: true, transforms: [email] }
+      - { column: Title, property: jobtitle, transforms: [trim] }
+      - { column: Phone, property: phone, transforms: [phone] }
+      - { column: Mobile, property: mobilephone, transforms: [phone] }
+      - { column: Lead Source, property: legacy_lead_source, transforms: [trim] }
+      - { column: Lifecycle Stage, property: lifecyclestage, transforms: [trim], valueMap: { Subscriber: subscriber, Lead: lead, MQL: marketingqualifiedlead, SQL: salesqualifiedlead, Opportunity: opportunity, Customer: customer, Evangelist: evangelist, Other: other } }
+  deals:
+    file: deals.csv
+    idColumn: Deal ID
+    upsertIdProperty: legacy_external_id
+    ownerColumn: Deal Owner
+    dealPipelineColumn: Pipeline
+    dealStageColumn: Stage
+    associations:
+      - { column: Account ID, to: companies }
+      - { column: Contact ID, to: contacts }
+    fields:
+      - { column: Deal Name, property: dealname, required: true, transforms: [trim] }
+      - { column: Amount, property: amount, transforms: [number] }
+      - { column: Closing Date, property: closedate, required: true, transforms: [date] }
+      - { column: Type, property: dealtype, transforms: [trim], valueMap: { "New Business": newbusiness, Renewal: existingbusiness, Expansion: existingbusiness, Partnership: newbusiness } }

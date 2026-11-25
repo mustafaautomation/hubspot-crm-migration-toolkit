@@ -1,0 +1,13 @@
+node_modules/
+dist/
+web/.next/
+web/node_modules/
+web/out/
+web/data/reports/*.json
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+.DS_Store
+.vercel

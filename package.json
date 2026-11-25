@@ -1,0 +1,62 @@
+{
+  "name": "hubspot-crm-migration-toolkit",
+  "version": "0.1.0",
+  "description": "Portfolio demo: migrate Salesforce, Pipedrive, and Zoho CSV exports into a HubSpot developer sandbox. Not client work.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Mustafa (https://github.com/mustafaautomation)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafaautomation/hubspot-crm-migration-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mustafaautomation/hubspot-crm-migration-toolkit/issues"
+  },
+  "homepage": "https://github.com/mustafaautomation/hubspot-crm-migration-toolkit#readme",
+  "bin": {
+    "hubspot-migrate": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "mappings",
+    "samples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "migrate": "tsx src/cli.ts",
+    "generate:samples": "tsx scripts/generate-samples.ts",
+    "demo:record": "tsx scripts/record-demo.ts",
+    "dashboard": "npm run dev --prefix web",
+    "live": "tsx src/cli.ts run --config mappings/salesforce.yaml --input samples/salesforce --live --out artifacts/northline-salesforce-live"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "csv-parse": "^5.6.0",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.7",
+    "eslint": "^9.18.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0",
+    "vitest": "^2.1.8"
+  }
+}

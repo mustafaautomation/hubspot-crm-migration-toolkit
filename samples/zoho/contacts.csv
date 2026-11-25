@@ -1,0 +1,22 @@
+Contact ID,Account ID,First Name,Last Name,Email,Title,Phone,Mobile,Lead Source,Lifecycle Stage,Contact Owner
+4158200001000001,4158200000000001,Farah,Nazir,farah.nazir@greyfriars.example,VP Revenue Operations,+44 20 7946 0991,,Inbound,Customer,Jordan Hale
+4158200001000002,4158200000000001,Priya,Mori,priya.mori@greyfriars.example,Head of RevOps,+44 20 7946 0991,,Outbound,Opportunity,Jordan Hale
+4158200001000003,4158200000000002,Gabriel,Soto,gabriel.soto@northlinecanada.example,Director of Sales,(617) 555-0151,,Outbound,Customer,Samir Patel
+4158200001000004,4158200000000003,Helen,Park,helen.park@paperlantern.example,Head of RevOps,(312) 555-0152,,Partner,SQL,Quinn Alvarez
+4158200001000005,4158200000000004,Ivan,Moreau,ivan.moreau@bricklaneclinics.example,CRO,(206) 555-0153,,Event,Opportunity,Riley Okonkwo
+4158200001000006,4158200000000004,Silas,Keller,silas.keller@bricklaneclinics.example,VP Sales,(206) 555-0153,,Website,Opportunity,Riley Okonkwo
+4158200001000007,4158200000000005,Jules,Carter,jules.carter@sablebirch.example,Sales Operations Manager,(415) 555-0154,,Website,SQL,Jordan Hale
+4158200001000008,4158200000000006,Keiko,Mori,keiko.mori@redkite.example,VP Sales,(303) 555-0155,,Inbound,Customer,Morgan Ellis
+4158200001000009,4158200000000007,Leo,Berg,leo.berg@harborschool.example,Director of Marketing Operations,(404) 555-0156,,Outbound,SQL,Samir Patel
+4158200001000010,4158200000000007,Victor,Delgado,victor.delgado@harborschool.example,VP Revenue Operations,(404) 555-0156,,Partner,Opportunity,Samir Patel
+4158200001000011,4158200000000008,Maya,Srinivasan,maya.srinivasan@lowcountryfreight.example,RevOps Lead,(646) 555-0157,,Partner,Customer,Riley Okonkwo
+4158200001000012,4158200000000009,Noah,Keller,noah.keller@kindlinghr.example,VP Revenue Operations,(702) 555-0158,,Event,SQL,Avery Chen
+4158200001000013,4158200000000010,Priya,Raman,priya.raman@opalmutual.example,Director of Sales,(919) 555-0159,,Website,Customer,Jordan Hale
+4158200001000014,4158200000000010,Zoe,Kapoor,zoe.kapoor@opalmutual.example,CRO,(919) 555-0159,,Inbound,Opportunity,Jordan Hale
+4158200001000015,4158200000000011,Quentin,Walsh,quentin.walsh@cedarhouse.example,Head of RevOps,(512) 555-0160,,Inbound,SQL,Quinn Alvarez
+4158200001000016,4158200000000012,Rosa,Delgado,rosa.delgado@mesadiagnostics.example,CRO,(617) 555-0161,,Outbound,Opportunity,Samir Patel
+4158200001000017,4158200000000013,Silas,Grant,silas.grant@northspan.example,Sales Operations Manager,(312) 555-0162,,Partner,Customer,Morgan Ellis
+4158200001000018,4158200000000013,Camille,Darwish,camille.darwish@northspan.example,Director of Marketing Operations,(312) 555-0162,,Event,Opportunity,Morgan Ellis
+4158200001000019,4158200000000014,Tessa,Nguyen,tessa.nguyen@lumenparish.example,VP Sales,(206) 555-0163,,Event,Opportunity,Jordan Hale
+4158200001009099,4158200000000001,Renée,Cho,renee.cho@,Analyst,not-a-phone,,Inbound,Hot,Jordan Hale
+4158200001009098,4158200000000001,Renée,Cho,  Renee.Cho@Greyfriars.Example ,Analyst,+44 20 7946 0100,,Inbound,Customer,Samir Patel

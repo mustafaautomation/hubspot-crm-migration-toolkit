@@ -1,0 +1,38 @@
+Contact ID,Account ID,First Name,Last Name,Email,Title,Phone,Mobile,Lead Source,Lifecycle Stage,Contact Owner
+003NS000000C001,001NS000000A001,Amina,Shah,  Amina.Shah@NorthwindRobotics.EXAMPLE ,VP Revenue Operations,(206) 555-0103,617.555.0111,Inbound,Customer,Avery Chen
+003NS000000C002,001NS000000A001,Jules,Nazir,jules.nazir@northwindrobotics.example,Head of RevOps,(206) 555-0103,617.555.0111,Outbound,Opportunity,Avery Chen
+003NS000000C003,001NS000000A002,Beatrice,Cole,beatrice.cole@cedarandpine.example,Director of Sales,415.555.0104,+1 312 555 0112,Outbound,Customer,Jordan Hale
+003NS000000C004,001NS000000A003,Chris,Dalton,chris.dalton@brightpathlogistics.example,Head of RevOps,+1 303 555 0105,2065550113,Partner,SQL,Riley Okonkwo
+003NS000000C005,001NS000000A004,Diane,Okada,diane.okada@harborlineclinics.example,CRO,4045550106,(415) 555-0114,Event,Customer,Avery Chen
+003NS000000C006,001NS000000A004,Maya,Moreau,maya.moreau@harborlineclinics.example,VP Sales,4045550106,(415) 555-0114,Website,Opportunity,Avery Chen
+003NS000000C007,001NS000000A005,Evan,Brooks,evan.brooks@quaystreet.example,Sales Operations Manager,(646) 555-0107,303.555.0115,Website,SQL,Jordan Hale
+003NS000000C008,001NS000000A006,Farah,Nazir,farah.nazir@lumenfield.example,VP Sales,702.555.0108,+1 404 555 0116,Inbound,Customer,Riley Okonkwo
+003NS000000C009,001NS000000A007,Gabriel,Soto,gabriel.soto@copperline.example,Director of Marketing Operations,+1 919 555 0109,6465550117,Outbound,SQL,Avery Chen
+003NS000000C010,001NS000000A007,Quentin,Berg,quentin.berg@copperline.example,VP Revenue Operations,+1 919 555 0109,6465550117,Partner,Opportunity,Avery Chen
+003NS000000C011,001NS000000A008,Helen,Park,helen.park@kindredlearning.example,RevOps Lead,5125550110,(702) 555-0118,Partner,Customer,Samir Patel
+003NS000000C012,001NS000000A009,Ivan,Moreau,ivan.moreau@sableroute.example,VP Revenue Operations,(617) 555-0111,919.555.0119,Event,SQL,Riley Okonkwo
+003NS000000C013,001NS000000A010,Jules,Carter,jules.carter@marlowegal.example,Director of Sales,312.555.0112,+1 512 555 0120,Website,Opportunity,Jordan Hale
+003NS000000C014,001NS000000A010,Tessa,Raman,tessa.raman@marlowegal.example,CRO,312.555.0112,+1 512 555 0120,Inbound,Opportunity,Jordan Hale
+003NS000000C015,001NS000000A011,Keiko,Mori,keiko.mori@finchhowe.example,Head of RevOps,+1 206 555 0113,6175550121,Inbound,Customer,Avery Chen
+003NS000000C016,001NS000000A012,Leo,Berg,leo.berg@arclightmedia.example,CRO,4155550114,(312) 555-0122,Outbound,Opportunity,Jordan Hale
+003NS000000C017,001NS000000A013,Maya,Srinivasan,maya.srinivasan@ploverhealth.example,Sales Operations Manager,(303) 555-0115,206.555.0123,Partner,Customer,Samir Patel
+003NS000000C018,001NS000000A013,Willa,Grant,willa.grant@ploverhealth.example,Director of Marketing Operations,(303) 555-0115,206.555.0123,Event,Opportunity,Samir Patel
+003NS000000C019,001NS000000A014,Noah,Keller,noah.keller@redcedar.example,VP Sales,404.555.0116,+1 415 555 0124,Event,Opportunity,Riley Okonkwo
+003NS000000C020,001NS000000A015,Priya,Raman,priya.raman@paperplanehr.example,Director of Marketing Operations,+1 646 555 0117,3035550125,Website,Customer,Avery Chen
+003NS000000C021,001NS000000A016,Quentin,Walsh,quentin.walsh@southshoreclinics.example,RevOps Lead,7025550118,(404) 555-0126,Inbound,Opportunity,Jordan Hale
+003NS000000C022,001NS000000A016,Andre,Lang,andre.lang@southshoreclinics.example,Director of Sales,7025550118,(404) 555-0126,Outbound,Opportunity,Jordan Hale
+003NS000000C023,001NS000000A017,Rosa,Delgado,rosa.delgado@oakmontschools.example,VP Revenue Operations,(919) 555-0119,646.555.0127,Outbound,Customer,Samir Patel
+003NS000000C024,001NS000000A018,Silas,Grant,silas.grant@blueharbor.example,Director of Sales,512.555.0120,+1 702 555 0128,Partner,Opportunity,Riley Okonkwo
+003NS000000C025,001NS000000A019,Tessa,Nguyen,tessa.nguyen@nimbusretail.example,Head of RevOps,+1 617 555 0121,9195550129,Event,Customer,Avery Chen
+003NS000000C026,001NS000000A019,Derek,Mercer,derek.mercer@nimbusretail.example,Sales Operations Manager,+1 617 555 0121,9195550129,Website,Opportunity,Avery Chen
+003NS000000C027,001NS000000A020,Uma,Kapoor,uma.kapoor@westferry.example,CRO,3125550122,(512) 555-0130,Website,Opportunity,Jordan Hale
+003NS000000C028,001NS000000A021,Victor,Lang,victor.lang@larkspurdevices.example,Sales Operations Manager,(206) 555-0123,617.555.0131,Inbound,Customer,Riley Okonkwo
+003NS000000C029,001NS000000A022,Willa,Hart,willa.hart@ironwoodcomponents.example,VP Sales,415.555.0124,+1 312 555 0132,Outbound,Opportunity,Avery Chen
+003NS000000C030,001NS000000A022,Chris,Holm,chris.holm@ironwoodcomponents.example,RevOps Lead,415.555.0124,+1 312 555 0132,Partner,Opportunity,Avery Chen
+003NS000000C031,001NS000000A023,Yasmin,Darwish,yasmin.darwish@summitledger.example,Director of Marketing Operations,+1 303 555 0125,2065550133,Partner,Customer,Jordan Hale
+003NS000000C032,001NS000000A024,Zoe,Mercer,zoe.mercer@lanternfreight.example,RevOps Lead,4045550126,(415) 555-0134,Event,Opportunity,Riley Okonkwo
+003NS000000CBAD,001NS000000A001,Pat,Notreal,not-an-email,Intern,5125550101,,Inbound,Lead,Avery Chen
+003NS000000CNOL,001NS000000A001,Sam,,sam.noname@northwindrobotics.example,Analyst,(512) 555-0108,,Outbound,SQL,Avery Chen
+003NS000000CDUP,001NS000000A001,Amina,Shah,AMINA.SHAH@northwindrobotics.example,VP Revenue Operations,512.555.0100,,Inbound,Customer,Jordan Hale
+003NS000000CEMP,001NS000000A001,,Cho,,Contractor,555-0100,,Event,Lead,Avery Chen
+003NS000000CPHN,001NS000000A003,Riley,Guest,riley.guest@brightpathlogistics.example,Coordinator,call the front desk,,Website,Lead,Former Rep

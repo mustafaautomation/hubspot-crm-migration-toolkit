@@ -1,0 +1,17 @@
+Account ID,Account Name,Website,Industry,Phone,Billing City,Billing State,Billing Country,Account Type,Account Owner,Employees,Description
+4158200000000001,Greyfriars Analytics,https://greyfriars.example/uk,Software,+44 20 7946 0958,London,,United Kingdom,Customer,Jordan Hale,120,UK analytics consultancy. Fictional London office.
+4158200000000002,Northline Canada Desk,https://northlinecanada.example/,Software,+1 416 555 0134,Toronto,ON,Canada,Customer,Samir Patel,45,Fictional Canadian services desk.
+4158200000000003,Paper Lantern Agency,paperlantern.example,Professional Services,+1 312 555 0142,Austin,TX,United States,Partner,Quinn Alvarez,28,Demand-gen agency.
+4158200000000004,Bricklane Clinics,https://www.bricklaneclinics.example,Healthcare,2065550143,Manchester,,United Kingdom,Prospect,Riley Okonkwo,200,Fictional UK clinic group.
+4158200000000005,Sable & Birch,https://sablebirch.example/,Financial Services,(415) 555-0144,Edinburgh,,United Kingdom,Prospect,Jordan Hale,80,Fictional wealth advisory.
+4158200000000006,Red Kite Manufacturing,redkite.example,Manufacturing,303.555.0145,Sheffield,,United Kingdom,Customer,Morgan Ellis,360,Fictional precision engineering firm.
+4158200000000007,Harbor School Group,https://www.harborschool.example,Education,+1 404 555 0146,Dublin,,Ireland,Prospect,Samir Patel,250,Fictional school group.
+4158200000000008,Lowcountry Freight,https://lowcountryfreight.example/,Logistics,6465550147,Charleston,SC,United States,Customer,Riley Okonkwo,190,Port drayage carrier.
+4158200000000009,Kindling HR,kindlinghr.example,Software,(702) 555-0148,Remote,,United States,Prospect,Avery Chen,70,People-ops software for agencies.
+4158200000000010,Opal Mutual,https://www.opalmutual.example,Insurance,919.555.0149,Des Moines,IA,United States,Customer,Jordan Hale,480,Regional mutual.
+4158200000000011,Cedarhouse Legal,https://cedarhouse.example/,Professional Services,+1 512 555 0150,Denver,CO,United States,Partner,Quinn Alvarez,50,Law-firm operations partner.
+4158200000000012,Mesa Diagnostics,mesadiagnostics.example,Healthcare,6175550151,Albuquerque,NM,United States,Prospect,Samir Patel,140,Reference lab.
+4158200000000013,Northspan Components,https://www.northspan.example,Manufacturing,(312) 555-0152,Green Bay,WI,United States,Customer,Morgan Ellis,305,Packaging components.
+4158200000000014,Lumen Parish Media,https://lumenparish.example/,Media,206.555.0153,New Orleans,LA,United States,Prospect,Jordan Hale,40,Independent publisher.
+4158200000009099,Greyfriars Analytics Ltd,http://www.greyfriars.example,Software,+44 20 7946 0958,London,,United Kingdom,Customer,Jordan Hale,120,Duplicate domain of the London account.
+4158200000009098,Unmapped Industry Ltd,unmapped.example,Astrology,2015550109,London,,United Kingdom,Prospect,Jordan Hale,10,Industry is not in the value map.

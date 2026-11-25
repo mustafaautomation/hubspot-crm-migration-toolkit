@@ -1,0 +1,27 @@
+Person - ID,Person - Name,Person - Email,Person - Phone,Person - Organization ID,Person - Title,Person - Owner,Person - Lead source,Person - Label
+9001,Diane Okada,  Diane.Okada@HALCYONDEVICES.EXAMPLE ,+1 512 555 0130,8001,VP Revenue Operations,Morgan Ellis,Inbound,Customer
+9002,Mary Ann Moss,maryann.moss@halcyondevices.example,+1 512 555 0130,8001,Director of Sales,Morgan Ellis,Outbound,Customer
+9003,Maya Moreau,maya.moreau@halcyondevices.example,+1 512 555 0130,8001,Head of RevOps,Morgan Ellis,Outbound,Opportunity
+9004,Evan Brooks,evan.brooks@driftglass.example,6175550131,8002,Director of Sales,Quinn Alvarez,Outbound,Opportunity
+9005,Farah Nazir,farah.nazir@porticopayments.example,(312) 555-0132,8003,Head of RevOps,Morgan Ellis,Partner,Customer
+9006,Gabriel Soto,gabriel.soto@meadowrye.example,206.555.0133,8004,CRO,Quinn Alvarez,Event,Opportunity
+9007,Quentin Berg,quentin.berg@meadowrye.example,206.555.0133,8004,VP Sales,Quinn Alvarez,Website,Opportunity
+9008,Helen Park,helen.park@asterlabs.example,+1 415 555 0134,8005,Sales Operations Manager,Avery Chen,Website,SQL
+9009,Ivan Moreau,ivan.moreau@foundrynorth.example,3035550135,8006,VP Sales,Morgan Ellis,Inbound,Customer
+9010,Jules Carter,jules.carter@clearwatercivic.example,(404) 555-0136,8007,Director of Marketing Operations,Jordan Hale,Outbound,SQL
+9011,Tessa Raman,tessa.raman@clearwatercivic.example,(404) 555-0136,8007,VP Revenue Operations,Jordan Hale,Partner,Opportunity
+9012,Keiko Mori,keiko.mori@silverthread.example,646.555.0137,8008,RevOps Lead,Riley Okonkwo,Partner,Customer
+9013,Leo Berg,leo.berg@highrailenergy.example,+1 702 555 0138,8009,VP Revenue Operations,Morgan Ellis,Event,SQL
+9014,Maya Srinivasan,maya.srinivasan@coralandco.example,9195550139,8010,Director of Sales,Quinn Alvarez,Website,Opportunity
+9015,Willa Grant,willa.grant@coralandco.example,9195550139,8010,CRO,Quinn Alvarez,Inbound,Opportunity
+9016,Noah Keller,noah.keller@pathwayclinics.example,(512) 555-0140,8011,Head of RevOps,Samir Patel,Inbound,Customer
+9017,Priya Raman,priya.raman@kitecable.example,617.555.0141,8012,CRO,Morgan Ellis,Outbound,Opportunity
+9018,Quentin Walsh,quentin.walsh@fieldnoteag.example,+1 312 555 0142,8013,Sales Operations Manager,Jordan Hale,Partner,Customer
+9019,Andre Lang,andre.lang@fieldnoteag.example,+1 312 555 0142,8013,Director of Marketing Operations,Jordan Hale,Event,Opportunity
+9020,Rosa Delgado,rosa.delgado@brightmonth.example,2065550143,8014,VP Sales,Quinn Alvarez,Event,Opportunity
+9021,Silas Grant,silas.grant@vantagekiln.example,(415) 555-0144,8015,Director of Marketing Operations,Morgan Ellis,Website,SQL
+9022,Tessa Nguyen,tessa.nguyen@heliometering.example,303.555.0145,8016,RevOps Lead,Avery Chen,Inbound,Customer
+9023,Derek Mercer,derek.mercer@heliometering.example,303.555.0145,8016,Director of Sales,Avery Chen,Outbound,Opportunity
+9099,Bad Email,bad-email,408.555.0199,8001,Intern,Morgan Ellis,Inbound,Lead
+9098,Prince,prince@halcyondevices.example,+1 408 555 0166,8001,Advisor,Morgan Ellis,Event,Lead
+9097,Diane Okada,DIANE.OKADA@HALCYONDEVICES.EXAMPLE,4085550102,8001,Duplicate,Quinn Alvarez,Website,Customer
