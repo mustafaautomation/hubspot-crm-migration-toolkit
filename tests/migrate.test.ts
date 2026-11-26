@@ -143,6 +143,46 @@ describe("migration", () => {
     });
   });
 
+  it("keeps associations to a company or contact whose source id is repeated in the export", async () => {
+    await withMock(async ({ mock, client }) => {
+      const dir = await tempDir();
+      await writeTables(dir, {
+        "companies.csv": {
+          headers: companyHeaders,
+          rows: [
+            ["A1", "Northwind", "northwind.example", "Software", "", ""],
+            ["A1", "Northwind (re-export)", "northwind.example", "Software", "", ""],
+          ],
+        },
+        "contacts.csv": {
+          headers: contactHeaders,
+          rows: [
+            ["C1", "A1", "Amina", "Shah", "amina.shah@northwind.example", "", ""],
+            ["C1", "A1", "Amina", "Shah", "amina.shah@northwind.example", "", ""],
+          ],
+        },
+        "deals.csv": {
+          headers: dealHeaders,
+          rows: [["D1", "Northwind Platform", "A1", "C1", "Closed Won", "Sales", "1000", "2026-04-01", "New Business", ""]],
+        },
+      });
+
+      const dry = await runMigration({ config: fixtureConfig(), inputDir: dir, mode: "dry-run" });
+      expect(dry.totals.companies).toMatchObject({ created: 1, duplicates: 1 });
+      expect(dry.totals.contacts).toMatchObject({ created: 1, duplicates: 1 });
+      expect(dry.associations.contactCompany).toMatchObject({ planned: 1, created: 1, skipped: 0 });
+      expect(dry.associations.dealCompany).toMatchObject({ planned: 1, created: 1, skipped: 0 });
+      expect(dry.associations.dealContact).toMatchObject({ planned: 1, created: 1, skipped: 0 });
+      const contact = dry.actions.find((action) => action.object === "contacts" && action.action === "create");
+      expect(contact?.properties.company).toBe("Northwind");
+
+      const live = await runMigration({ config: fixtureConfig(), inputDir: dir, mode: "live", client });
+      expect(live.associations.dealCompany).toMatchObject({ created: 1, skipped: 0, failed: 0 });
+      expect(live.reconciliation.match).toBe(true);
+      expect(mock.associations()).toHaveLength(3);
+    });
+  });
+
   it("retries a 429 and still lands a single record", async () => {
     await withMock(async ({ mock, client, sleeps }) => {
       mock.failNext(429, { "retry-after": "2" });
