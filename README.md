@@ -63,10 +63,10 @@ npm run migrate -- run \
   --config mappings/salesforce.yaml \
   --input samples/salesforce \
   --dry-run \
-  --out artifacts/northline-salesforce-dry-run
+  --out artifacts/local/northline-salesforce-dry-run
 ```
 
-Dry-run is the default when `--live` is omitted. It exits 0 even when the sample file contains deliberate bad rows; those rows are the validation report.
+Dry-run is the default when `--live` is omitted. It exits 0 even when the sample file contains deliberate bad rows; those rows are the validation report. The summary goes to stdout; progress and the `wrote …` lines for the `.json`, `.md`, and `.html` report go to stderr. `artifacts/local/` is gitignored, so your own runs do not overwrite the recorded reports in `artifacts/`.
 
 ### Dry-run output
 
@@ -89,6 +89,8 @@ associations
   deal → company       planned 39  create 38  skip 1  fail 0
   deal → contact       planned 39  create 39  skip 0  fail 0
 
+Dry-run does not write, so there is nothing new to read back.
+
 validation errors: 8
   companies row 27 001NS000000ABAD: industry — invalid value "Astrology"
   companies row 28 001NS000000ANON: name — required value is missing
@@ -98,9 +100,11 @@ validation errors: 8
   contacts row 37 003NS000000CEMP: email — required value is missing
   deals row 39 006NS000000OBAD: dealstage — unmapped stage "Verbal Yes" for pipeline "Sales"
   deals row 41 006NS000000ODAT: closedate — invalid date "yesterday"
+
+note: HubSpot was not queried. Create versus update assumes the portal has none of these records yet.
 ```
 
-The full Markdown and HTML for a recorded run are in `artifacts/northline-salesforce-dry-run.md` and `artifacts/northline-salesforce-applied.md`.
+The full Markdown and HTML for a recorded run are in `artifacts/northline-salesforce-dry-run.md` and `artifacts/northline-salesforce-applied.md`. Those were recorded by `npm run demo:record` against the in-memory HubSpot API, so their target, notes, and owner warnings differ from a no-token run.
 
 ## Configuration
 
