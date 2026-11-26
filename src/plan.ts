@@ -185,7 +185,7 @@ function markDuplicate(record: PlannedRecord, winner: PlannedRecord, keyLabel: s
 }
 
 function copyCompanyNames(companies: PlannedRecord[], contacts: PlannedRecord[]): void {
-  const byId = new Map(companies.map((record) => [record.sourceId, record]));
+  const byId = indexBySourceId(companies);
   for (const contact of contacts) {
     if (contact.action === "fail") continue;
     const link = contact.links.find((item) => item.to === "companies");
@@ -193,6 +193,22 @@ function copyCompanyNames(companies: PlannedRecord[], contacts: PlannedRecord[])
     const company = canonicalRecord(byId, link.sourceId);
     if (company?.properties.name) contact.properties.company = company.properties.name;
   }
+}
+
+/**
+ * Index records by source id. When an export repeats an id, the entry is the
+ * row that dedupe kept (the first row that did not fail validation), not the
+ * later duplicate, so links to that id resolve to the record that is written.
+ */
+export function indexBySourceId(records: PlannedRecord[]): Map<string, PlannedRecord> {
+  const byId = new Map<string, PlannedRecord>();
+  for (const record of records) {
+    const existing = byId.get(record.sourceId);
+    if (!existing || (existing.action === "fail" && record.action !== "fail")) {
+      byId.set(record.sourceId, record);
+    }
+  }
+  return byId;
 }
 
 export function canonicalRecord(

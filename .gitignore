@@ -4,6 +4,7 @@ web/.next/
 web/node_modules/
 web/out/
 web/data/reports/*.json
+artifacts/local/
 .env
 .env.*
 !.env.example

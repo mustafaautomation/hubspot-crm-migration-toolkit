@@ -12,7 +12,7 @@ import {
   type OwnerRecord,
 } from "./hubspot/client.js";
 import { ensureSchema, type EnsuredSchema } from "./hubspot/schema.js";
-import { buildLocalPlan, canonicalRecord, recordLabel, type PlannedRecord, type SourceTables } from "./plan.js";
+import { buildLocalPlan, canonicalRecord, indexBySourceId, recordLabel, type PlannedRecord, type SourceTables } from "./plan.js";
 import {
   DISCLAIMER,
   OBJECT_TYPES,
@@ -330,9 +330,9 @@ async function writeRecords(
 
 function resolveAssociations(records: Record<HubSpotObjectType, PlannedRecord[]>, mode: "dry-run" | "live"): AssociationRecord[] {
   const indexes = {
-    companies: new Map(records.companies.map((record) => [record.sourceId, record])),
-    contacts: new Map(records.contacts.map((record) => [record.sourceId, record])),
-    deals: new Map(records.deals.map((record) => [record.sourceId, record])),
+    companies: indexBySourceId(records.companies),
+    contacts: indexBySourceId(records.contacts),
+    deals: indexBySourceId(records.deals),
   };
   const seen = new Set<string>();
   const results: AssociationRecord[] = [];
